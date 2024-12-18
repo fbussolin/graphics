@@ -1,0 +1,175 @@
+/* @font-face {
+    font-family: ibmvga8;
+    src: url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.eot);
+    src: url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.eot?#iefix) format('embedded-opentype'),
+	     url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.woff2) format('woff2'),
+		 url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.woff) format('woff'),
+		 url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal
+} */
+
+@font-face {
+	font-family: msdos;
+	src: url(https://fbussolin.github.io/graphics/public/Web437_IBM_VGA_8x16.woff) format('woff');
+	font-weight: 400;
+    font-style: normal;
+}
+
+.content article {
+	border: double 6px #ffffff;
+	outline: solid 2px #00aaaa;
+	padding: 10px;
+	zoom: 150%;
+}
+
+.content article,
+.content code {
+	color: #000000;
+	background-color: #00aaaa;
+    font-family: msdos;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.content article a {
+	color: #FFFF55;
+	text-decoration: none;
+}
+
+.content article a:hover {
+	color: #FFFF55;
+	background-color: #0000aa;
+}
+
+.content article li {
+	list-style-type: square;
+}
+
+.content article h1 {
+	border-top: solid 10px #000000;
+	border-bottom: solid 7px #000000;
+	border-left: solid 4px #000000;
+	border-right: solid 4px #000000;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 8px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.content article h1.library {
+	border-left: none !important;
+	border-right: none !important;
+}
+
+.content article h2 {
+	border-bottom: solid 7px #000000;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 8px;
+}
+
+.content article h3 {
+	font-size: 16px;
+	margin-left: 8px;
+	margin-bottom: 0 !important;
+}
+
+.content article h4 {
+	font-size: 16px;
+	margin-left: 8px;
+	margin-bottom: 0 !important;
+}
+
+.content article h6 {
+	border-bottom: solid 7px #000000;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 8px;
+}
+
+.content .data { 
+	position: relative;
+	top: -1rem;
+	white-space: pre; 
+}
+
+.content .whitespacepre {
+	white-space: pre; 
+}
+
+.content article ::selection,
+.content article ::-webkit-selection {
+	background-color: #aaaaaa;
+}
+
+.content {
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.content article {
+	-webkit-user-select: text;
+	-ms-user-select: text;
+}
+
+.left-30 {
+	position: relative;
+	left: -8px;
+}
+
+.center {
+	text-align: center;
+}
+
+pre code.hljs {
+	padding-left: 8px !important;
+	padding-top: 0 !important;
+	padding-right: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+pre>.code-action,
+pre>.link-success,
+pre>.link-success:hover,
+pre>.link-success:focus {
+	color: #FFFF55 !important;
+}
+
+.hljs,
+.hljs-addition,
+.hljs-attribute,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-comment,
+.hljs-deletion,
+.hljs-doctag,
+.hljs-emphasis,
+.hljs-function,
+.hljs-keyword,
+.hljs-link,
+.hljs-literal,
+.hljs-meta,
+.hljs-name,
+.hljs-number,
+.hljs-params,
+.hljs-quote,
+.hljs-regexp,
+.hljs-section,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-selector-tag,
+.hljs-string,
+.hljs-strong,
+.hljs-subst
+.hljs-symbol,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-title,
+.hljs-type,
+.hljs-variable {
+	color: #0000aa !important;
+	background: #00aaaa !important;
+	background-color: #00aaaa !important;
+	font-style: normal !important;
+	text-decoration: none !important;
+}
