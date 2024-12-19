@@ -31,6 +31,7 @@
       "_appName": "graphics",
       "_appTitle": "graphics",
 	  "_disableBreadcrumb": true,
+	  "_disableContribution": true,
 	  "_disableNextArticle": true,
       "_enableSearch": true,
       "pdf": true

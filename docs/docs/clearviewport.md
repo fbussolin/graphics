@@ -13,23 +13,15 @@ uid: clearviewport
 <br>
 
 ### Remarks:
-clearviewport erases the viewport and moves the CP (current position) to home (0,0), relative to the viewport.
+clearviewport erases the viewport and moves the CP (current position) to home (0,0), relative to the viewport.<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="cleardevice.md">  cleardevice    </a> <a href="getviewsettings.md">  getviewsettings</a> <a href="setviewport.md">  setviewport    </a>
-</div>
+<div class="data"><a href="cleardevice.md">  cleardevice    </a> <a href="getviewsettings.md">  getviewsettings</a> <a href="setviewport.md">  setviewport    </a>
+<br></div>
 
 ### Example:
 
@@ -90,3 +82,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

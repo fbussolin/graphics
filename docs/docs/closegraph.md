@@ -13,27 +13,17 @@ uid: closegraph
 <br>
 
 ### Remarks:
-closegraph deallocates all memory allocated by the graphics system.
-
-It then restores the screen to the mode it was in before you called initgraph.
-
-(The graphics system deallocates memory, such as the drivers, fonts, and an internal buffer, through a call to _graphfreemem.)
+closegraph deallocates all memory allocated by the graphics system.<br><br>
+It then restores the screen to the mode it was in before you called [initgraph](initgraph.md).<br><br>
+(The graphics system deallocates memory, such as the drivers, fonts, and an internal buffer, through a call to [_graphfreemem](_graphfreemem.md).)<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>
-</div>
+<div class="data"><a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>
+<br></div>
 
 ### Example:
 
@@ -84,3 +74,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

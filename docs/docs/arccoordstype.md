@@ -1,15 +1,23 @@
+---
+uid: arccoordstype
+---
+[!INCLUDE [](../includes/graphics_header.md)]
+## &nbsp;arccoordstype
 
-  arccoordstype                  <GRAPHICS.H>
- ßßßßßßßßßßßßßßß
-Used to get current viewport settings from getarccoords.
+Used to get current viewport settings from [getarccoords](getarccoords.md).<br>
 
+<div class="data">
   struct arccoordstype {
     int  x, y;              /* center point of arc*/
     int  xstart, ystart;    /* start position */
     int  xend, yend;        /* end position   */
   };
+<br></div>
 
-These values are useful if you need to make a line meet the end of an arc.
+These values are useful if you need to make a line meet the end of an arc.<br><br>
 
- See Also:
-  arc
+### See Also:
+<div class="data"><a href="arc.md">  arc  </a>
+</div>
+
+<br>

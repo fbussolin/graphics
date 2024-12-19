@@ -13,38 +13,25 @@ uid: floodfill
 <br>
 
 ### Remarks:
-floodfill fills an enclosed area on bitmap devices.
+floodfill fills an enclosed area on bitmap devices.<br><br>
+The area bounded by the color border is flooded with the current fill pattern and fill color.<br><br>
+(x,y) is a "seed point".<br>
+* If the seed is within an enclosed area, the inside will be filled.asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd
+* If the seed is outside the enclosed area, the exterior will be filled.<br><br>
 
-The area bounded by the color border is flooded with the current fill pattern and fill color.
-
-(x,y) is a "seed point".  
-* If the seed is within an enclosed area, the inside will be filled.
-* If the seed is outside the enclosed area, the exterior will be filled.
-
-Use [fillpoly](fillpoly.md) instead of floodfill whenever possible so you can maintain code compatibility with future versions.
-
-floodfill does not work with the IBM-8514 driver.
+Use [fillpoly](fillpoly.md) instead of floodfill whenever possible so you can maintain code compatibility with future versions.<br><br>
+floodfill does not work with the IBM-8514 driver.<br><br>
 
 #### Return Value:
 
-<br>
-
 If an error occurs while flooding a region, [graphresult](graphresult.md) returns -7.
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="drawpoly.md">  drawpoly     </a> <a href="fill_patterns.md">  fill_patterns</a> <a href="fillpoly.md">  fillpoly     </a> <a href="graphresult.md">  graphresult </a>
+<div class="data"><a href="drawpoly.md">  drawpoly     </a> <a href="fill_patterns.md">  fill_patterns</a> <a href="fillpoly.md">  fillpoly     </a> <a href="graphresult.md">  graphresult </a>
 <a href="setfillstyle.md">  setfillstyle </a>
-</div>
+<br></div>
 
 ### Example:
 
@@ -107,3 +94,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

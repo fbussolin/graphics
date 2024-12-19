@@ -1,5 +1,5 @@
 ---
-uid: COLORS
+uid: CGA_COLORS
 ---
 <a class="whitespacepre" href="#" href="#" onclick="window.history.back()"> ← </a>
 

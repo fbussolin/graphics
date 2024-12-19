@@ -1,16 +1,23 @@
+---
+uid: font_names
+---
+[!INCLUDE [](../includes/graphics_header.md)]
+## &nbsp;font_names
 
- font_names                    <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+##### Enum: Names for BGI fonts
 
-Enum: Names for BGI fonts
+<div class="data">
+     Name       │Value│ Meaning
+════════════════╪═════╪═════════════════════════
+ DEFAULT_FONT   │  0  │ 8x8 bit-mapped font
+ TRIPLEX_FONT   │  1  │ Stroked triplex font
+ SMALL_FONT     │  2  │ Stroked small font
+ SANS_SERIF_FONT│  3  │ Stroked sans-serif font
+ GOTHIC_FONT    │  4  │ Stroked gothic font
+<br></div>
 
-     Name       ³Value³ Meaning
-ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
- DEFAULT_FONT   ³  0  ³ 8x8 bit-mapped font
- TRIPLEX_FONT   ³  1  ³ Stroked triplex font
- SMALL_FONT     ³  2  ³ Stroked small font
- SANS_SERIF_FONT³  3  ³ Stroked sans-serif font
- GOTHIC_FONT    ³  4  ³ Stroked gothic font
+### See Also:
+<div class="data"><a href="settextstyle.md">  settextstyle</a>
+</div>
 
-See Also:
- settextstyle
+<br>

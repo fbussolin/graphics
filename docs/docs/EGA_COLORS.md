@@ -1,5 +1,5 @@
 ---
-uid: COLORS
+uid: EGA_COLORS
 ---
 <a class="whitespacepre" href="#" href="#" onclick="window.history.back()"> ← </a>
 

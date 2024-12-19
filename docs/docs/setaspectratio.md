@@ -1,5 +1,5 @@
 ---
-uid: getaspectratio
+uid: setaspectratio
 ---
 [!INCLUDE [](../includes/graphics_header.md)]
 # getaspectratio,<br>setaspectratio

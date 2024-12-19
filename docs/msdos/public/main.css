@@ -1,19 +1,12 @@
-/* @font-face {
-    font-family: ibmvga8;
-    src: url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.eot);
-    src: url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.eot?#iefix) format('embedded-opentype'),
-	     url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.woff2) format('woff2'),
-		 url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.woff) format('woff'),
-		 url(https://int10h.org/oldschool-pc-fonts/webfonts/ibm_vga8.ttf) format('truetype');
-    font-weight: 400;
-    font-style: normal
-} */
-
 @font-face {
 	font-family: msdos;
 	src: url(https://fbussolin.github.io/graphics/public/Web437_IBM_VGA_8x16.woff) format('woff');
 	font-weight: 400;
     font-style: normal;
+}
+
+.content blockquote {
+	margin-bottom: 1rem !important;
 }
 
 .content article {
@@ -42,8 +35,24 @@
 	background-color: #0000aa;
 }
 
+.content article ul,
+.content article ol,
+.content article dl,
+.content article h2,
+.content article h3,
+.content article h4,
+.content article h5 {
+	margin-bottom: 0 !important;
+}
+
+.content article ol,
+.content article ul {
+    padding-left: 1.5rem !important;
+}
+
 .content article li {
-	list-style-type: square;
+	list-style-type: "■";
+	padding-inline-start: 1ch;
 }
 
 .content article h1 {
@@ -53,6 +62,7 @@
 	border-right: solid 4px #000000;
 	display: inline-block;
 	font-size: 16px;
+	margin-bottom: 8px;
 	margin-left: 8px;
 	padding-left: 4px;
 	padding-right: 4px;
@@ -67,6 +77,7 @@
 	display: inline-block;
 	font-size: 16px;
 	margin-left: 8px;
+	margin-bottom: 8px !important;
 }
 
 .content article h3 {
@@ -75,7 +86,8 @@
 	margin-bottom: 0 !important;
 }
 
-.content article h4 {
+.content article h4,
+.content article h5 {
 	font-size: 16px;
 	margin-left: 8px;
 	margin-bottom: 0 !important;
@@ -86,16 +98,29 @@
 	display: inline-block;
 	font-size: 16px;
 	margin-left: 8px;
+	margin-bottom: 8px !important;
 }
 
-.content .data { 
-	position: relative;
-	top: -1rem;
-	white-space: pre; 
+.content article p {
+	margin: 0 !important;
+	margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.content div {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.content .data {
+	display: inline !important;
+    font-size: 16px;
+    line-height: 16px;
+	white-space: pre-wrap; 
 }
 
 .content .whitespacepre {
-	white-space: pre; 
+	white-space: pre-wrap; 
 }
 
 .content article ::selection,
@@ -112,9 +137,10 @@
 	-ms-user-select: text;
 }
 
-.left-30 {
+.title {
+ 	left: -8px;
 	position: relative;
-	left: -8px;
+	text-align: center;
 }
 
 .center {

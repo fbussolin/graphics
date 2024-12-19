@@ -1,22 +1,29 @@
+---
+uid: graphics_drivers
+---
+[!INCLUDE [](../includes/graphics_header.md)]
+## &nbsp;graphics_drivers
 
- graphics_drivers               <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+##### Enum: BGI graphics drivers
 
-Enum: BGI graphics drivers
+<div class="data">
+ Constant │ Value
+══════════╪═════════════════════════════════
+ DETECT   │   0 (requests autodetection)
+ CGA      │   1
+ MCGA     │   2
+ EGA      │   3
+ EGA64    │   4
+ EGAMONO  │   5
+ IBM8514  │   6
+ HERCMONO │   7
+ ATT400   │   8
+ VGA      │   9
+ PC3270   │  10
+<br></div>
 
- Constant ³ Value
-ÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
- DETECT   ³   0 (requests autodetection)
- CGA      ³   1
- MCGA     ³   2
- EGA      ³   3
- EGA64    ³   4
- EGAMONO  ³   5
- IBM8514  ³   6
- HERCMONO ³   7
- ATT400   ³   8
- VGA      ³   9
- PC3270   ³  10
+### See Also:
+<div class="data"><a href="graphics_modes.md">  graphics_modes</a> <a href="initgraph.md">  initgraph     </a>
+</div>
 
-See Also:
- graphics_modes   initgraph
+<br>

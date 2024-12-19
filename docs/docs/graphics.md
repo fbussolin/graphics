@@ -4,9 +4,7 @@ uid: graphics
 > Borland Graphics Package from Borland C++ 3.1 compiler.  
 > Copyright (c) 1987, 1992 by Borland International  
 > All Rights Reserved.
-<h1 class="library">GRAPHICS.H</h1>
-
-<br>
+<h1 class="library">GRAPHICS.H</h1><br>
 
 ## Functions  
 <div class="data">
@@ -37,7 +35,7 @@ uid: graphics
 <a href="setlinestyle.md">  setlinestyle        </a> <a href="setpalette.md">  setpalette          </a> <a href="setrgbpalette.md">  setrgbpalette       </a>
 <a href="settextjustify.md">  settextjustify      </a> <a href="settextstyle.md">  settextstyle        </a> <a href="setusercharsize.md">  setusercharsize     </a>
 <a href="setviewport.md">  setviewport         </a> <a href="setvisualpage.md">  setvisualpage       </a> <a href="setwritemode.md">  setwritemode        </a>
-<a href="textheight.md">  textheight          </a> <a href="textwidth.md">  textwidth
+<a href="textheight.md">  textheight          </a> <a href="textwidth.md">  textwidth           </a><br>
 </div>
 
 ## Constants, data types, and global variables  
@@ -49,10 +47,12 @@ uid: graphics
 <a href="line_widths.md">  line_widths      </a> <a href="linesettingstype.md">  linesettingstype </a> <a href="MAXCOLORS.md">  MAXCOLORS        </a>
 <a href="palettetype.md">  palettetype      </a> <a href="pointtype.md">  pointtype        </a> <a href="putimage_ops.md">  putimage_ops     </a>
 <a href="text_just.md">  text_just        </a> <a href="text_directions.md">  text directions  </a> <a href="textsettingstype.md">  textsettingstype </a>
-<a href="USER_CHAR_SIZE.md">  USER_CHAR_SIZE   </a> <a href="VERT_DIR.md">  VERT_DIR         </a> <a href="viewporttype.md">  viewporttype     </a>
+<a href="USER_CHAR_SIZE.md">  USER_CHAR_SIZE   </a> <a href="VERT_DIR.md">  VERT_DIR         </a> <a href="viewporttype.md">  viewporttype     </a><br>
 </div>
 
 ## See Also  
 <div class="data">
 <a href="#see-also" onclick="alert('Only graphics library available.');">  List of all Header files</a> <a href="#see-also" onclick="alert('Only graphics library available.');">  Pre-compiled headers    </a>
 </div>
+
+<br>

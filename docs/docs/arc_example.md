@@ -1,9 +1,8 @@
-<a class="whitespacepre" href="circle.md#examples"> ← </a>
+<a class="whitespacepre" href="arc.md#examples"> ← </a>
 
 ## &nbsp;arc example&nbsp;
 
-``` ```
-
+``` ```<br>
 
 ```
 #include <graphics.h>
