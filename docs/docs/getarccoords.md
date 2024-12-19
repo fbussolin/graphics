@@ -6,31 +6,26 @@ uid: getarccoords
 
 #### Gets coordinates of the last call to arc
 
-<br>
-
-#### Declaration:
-&nbsp;&nbsp;&nbsp;void far getarccoords(struct arccoordstype far *arccoords);
+<div class="data">
+ Declaration:
+   void far getarccoords(struct arccoordstype far *arccoords);
+<br></div>
 
 ### Remarks:
-getarccoords puts information about the last call to arc in the [arccoordstype structure](arccoordstype.md) *arccoords.
+getarccoords puts information about the last call to arc in the [arccoordstype structure](arccoordstype.md) *arccoords.<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="arc.md">  arc        </a> <a href="fillellipse.md">  fillellipse</a> <a href="sector.md">  sector     </a>
-</div>
+<div class="data"><a href="arc.md">  arc        </a> <a href="fillellipse.md">  fillellipse</a> <a href="sector.md">  sector     </a>
+<br></div>
 
 ### Example:
+
+<br>
+
 ```
 #include <graphics.h>
 #include <stdlib.h>
@@ -85,3 +80,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

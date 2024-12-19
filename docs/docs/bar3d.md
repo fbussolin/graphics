@@ -6,17 +6,14 @@ uid: bar3d
 
 #### Draws a 3-D bar
 
-<br>
-
 <div class="data">
  Declaration:  void far bar3d(int left, int top, int right, int bottom,
             int depth, int topflag);
-</div>
+<br></div>
 
 ### Remarks:
-bar3d draws a three-dimensional rectangular bar, then fills it using the current fill pattern and fill color.
-
-The three-dimensional outline of the bar is drawn in the current line style and color.
+bar3d draws a three-dimensional rectangular bar, then fills it using the current fill pattern and fill color.<br><br>
+The three-dimensional outline of the bar is drawn in the current line style and color.<br>
 
 <div class="data">
   Parameter       │ What It Is/Does
@@ -26,29 +23,19 @@ The three-dimensional outline of the bar is drawn in the current line style and 
                   │ top is put on the bar
   (left, top)     │ Rectangle's upper left corner
   (right, bottom) │ Rectangle's lower right corner
-</div>
+<br></div>
 
-If topflag is non-zero, a top is put on the bar. If topflag is 0, no top is put on the bar: This makes it possible to stack several bars on top of one another.
-
-To calculate a typical depth for bar3d, take 25% of the width of the bar, like this:
-
-&nbsp;bar3d(left, top, right, bottom, (right-left)/4, 1);
+If topflag is non-zero, a top is put on the bar. If topflag is 0, no top is put on the bar: This makes it possible to stack several bars on top of one another.<br><br>
+To calculate a typical depth for bar3d, take 25% of the width of the bar, like this:<br><br>
+&nbsp;bar3d(left, top, right, bottom, (right-left)/4, 1);<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="bar.md">  bar         </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>
-</div>
+<div class="data"><a href="bar.md">  bar         </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>
+<br></div>
 
 ### Example:
 
@@ -101,3 +88,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

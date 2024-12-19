@@ -1,6 +1,6 @@
-<a class="whitespacepre" href="circle.md#examples"> ← </a>
+<a class="whitespacepre" href="sector.md#example"> ← </a>
 
-## &nbsp;circle example&nbsp;  
+## &nbsp;sector example&nbsp;
 
 ``` ```<br>
 
@@ -14,8 +14,9 @@ int main(void)
 {
    /* request auto detection */
    int gdriver = DETECT, gmode, errorcode;
-   int midx, midy;
-   int radius = 100;
+   int midx, midy, i;
+   int stangle = 45, endangle = 135;
+   int xrad = 100, yrad = 50;
 
    /* initialize graphics and local variables */
    initgraph(&gdriver, &gmode, "");
@@ -32,14 +33,23 @@ int main(void)
 
    midx = getmaxx() / 2;
    midy = getmaxy() / 2;
-   setcolor(getmaxcolor());
 
-   /* draw the circle */
-   circle(midx, midy, radius);
+   /* loop through the fill patterns */
+   for (i=EMPTY_FILL; i<USER_FILL; i++)
+   {
+      /* set the fill style */
+      setfillstyle(i, getmaxcolor());
+
+      /* draw the sector slice */
+      sector(midx, midy, stangle, endangle, xrad, yrad);
+
+      getch();
+   }
 
    /* clean up */
-   getch();
    closegraph();
    return 0;
 }
 ```
+
+<br>

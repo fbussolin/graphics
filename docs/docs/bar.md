@@ -13,36 +13,26 @@ uid: bar
 <br>
 
 ### Remarks:  
-bar draws a filled-in, rectangular, two-dimensional bar.
-
-The bar is filled using the current fill pattern and fill color. bar does not outline the bar.
-
-To draw an outlined two-dimensional bar, use bar3d with depth = 0.
+bar draws a filled-in, rectangular, two-dimensional bar.<br><br>
+The bar is filled using the current fill pattern and fill color. bar does not outline the bar.<br><br>
+To draw an outlined two-dimensional bar, use bar3d with depth = 0.<br>
 
 <div class="data">
   Parameters      │ What they are
  ═════════════════╪══════════════════════════════════════
   (left, top)     │ the rectangle's upper left corner
   (right, bottom) │ the rectangle's lower right corner
-</div>
+<br></div>
 
-The coordinates are in pixels.
+The coordinates are in pixels.<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="bar3d.md">  bar3d       </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>
-</div>
+<div class="data"><a href="bar3d.md">  bar3d       </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>
+<br></div>
 
 ### Example:
 
@@ -97,3 +87,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

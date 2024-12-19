@@ -6,41 +6,26 @@ uid: detectgraph
  
 #### Determines graphics driver and mode to use by checking the hardware.
 
-<br>
-
 <div class="data">
  Declaration:  
    void far detectgraph(int far *graphdriver, int far *graphmode);
-</div>
+<br></div>
 
 ### Remarks:  
-detectgraph detects your system's graphics adapter and chooses the mode that provides the highest resolution for that adapter.
-
-If no graphics hardware is detected, detectgraph sets *graphdriver to grNotDetected, and graphresult returns grNotDetected.
-
-The main reason to call detectgraph directly is to override the graphics mode that detectgraph recommends to initgraph.
-
-\*graphdriver is an integer that specifies the graphics driver to be used. You can give *graphdriver a value using a constant of the [graphics_drivers](graphics_drivers.md) enum type, defined in GRAPHICS.H.
-
-\*graphmode specifies the initial graphics mode. However, if *graphdriver = DETECT, *graphmode is set to the highest resolution available for the detected driver.
-
-You can give *graphmode a value using a constant of the [graphics_modes](graphics_modes.md) enum type, also defined in GRAPHICS.H.
+detectgraph detects your system's graphics adapter and chooses the mode that provides the highest resolution for that adapter.<br><br>
+If no graphics hardware is detected, detectgraph sets *graphdriver to [grNotDetected](graphics_errors.md), and [graphresult](graphresult.md) returns [grNotDetected](graphics_errors.md).<br><br>
+The main reason to call detectgraph directly is to override the graphics mode that detectgraph recommends to [initgraph](initgraph.md).<br><br>
+\*graphdriver is an integer that specifies the graphics driver to be used. You can give *graphdriver a value using a constant of the [graphics_drivers](graphics_drivers.md) enum type, defined in [GRAPHICS.H](graphics.md).<br><br>
+\*graphmode specifies the initial graphics mode. However, if *graphdriver = [DETECT](graphics_drivers.md), *graphmode is set to the highest resolution available for the detected driver.<br><br>
+You can give *graphmode a value using a constant of the [graphics_modes](graphics_modes.md) enum type, also defined in [GRAPHICS.H](graphics.md).<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="graphresult.md">  graphresult</a> <a href="initgraph.md">  initgraph  </a>
-</div>
+<div class="data"><a href="graphresult.md">  graphresult</a> <a href="initgraph.md">  initgraph  </a>
+<br></div>
 
 ### Example:
 
@@ -93,3 +78,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>

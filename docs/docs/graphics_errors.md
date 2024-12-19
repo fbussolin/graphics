@@ -1,26 +1,32 @@
+---
+uid: graphics_errors
+---
+[!INCLUDE [](../includes/graphics_header.md)]
+## &nbsp;graphics_errors
 
- graphics_errors                <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+##### Enum: Error return code from [graphresult](graphresult.md)
 
-Enum: Error return code from graphresult
+<div class="data">
+ Error│ graphics_errors   │
+ code │ constant          │ Corresponding error message string
+══════╪═══════════════════╪═══════════════════════════════════════════════
+   0  │ grOk              │ No error
+  -1  │ grNoInitGraph     │ (BGI) graphics not installed (use initgraph)
+  -2  │ grNotDetected     │ Graphics hardware not detected
+  -3  │ grFileNotFound    │ Device driver file not found
+  -4  │ grInvalidDriver   │ Invalid device driver file
+  -5  │ grNoLoadMem       │ Not enough memory to load driver
+  -6  │ grNoScanMem       │ Out of memory in scan fill
+  -7  │ grNoFloodMem      │ Out of memory in flood fill
+  -8  │ grFontNotFound    │ Font file not found
+  -9  │ grNoFontMem       │ Not enough memory to load font
+ -10  │ grInvalidMode     │ Invalid graphics mode for selected driver
+ -11  │ grError           │ Graphics error
+ -12  │ grIOerror         │ Graphics I/O error
+ -13  │ grInvalidFont     │ Invalid font file
+ -14  │ grInvalidFontNum  │ Invalid font number
+ -15  │ grInvalidDeviceNum│ Invalid device number
+ -18  │ grInvalidVersion  │ Invalid version number
+</div>
 
- Error³ graphics_errors   ³
- code ³ constant          ³ Corresponding error message string
-ÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-   0  ³ grOk              ³ No error
-  -1  ³ grNoInitGraph     ³ (BGI) graphics not installed (use initgraph)
-  -2  ³ grNotDetected     ³ Graphics hardware not detected
-  -3  ³ grFileNotFound    ³ Device driver file not found
-  -4  ³ grInvalidDriver   ³ Invalid device driver file
-  -5  ³ grNoLoadMem       ³ Not enough memory to load driver
-  -6  ³ grNoScanMem       ³ Out of memory in scan fill
-  -7  ³ grNoFloodMem      ³ Out of memory in flood fill
-  -8  ³ grFontNotFound    ³ Font file not found
-  -9  ³ grNoFontMem       ³ Not enough memory to load font
- -10  ³ grInvalidMode     ³ Invalid graphics mode for selected driver
- -11  ³ grError           ³ Graphics error
- -12  ³ grIOerror         ³ Graphics I/O error
- -13  ³ grInvalidFont     ³ Invalid font file
- -14  ³ grInvalidFontNum  ³ Invalid font number
- -15  ³ grInvalidDeviceNum³ Invalid device number
- -18  ³ grInvalidVersion  ³ Invalid version number
+<br>

@@ -12,30 +12,21 @@ uid: _graphgetmem
 * void far _graphfreemem(void far *ptr, unsigned size);
 * void far * far _graphgetmem(unsigned size);
 
+<br>
+
 ### Remarks:
-Routines in the graphics library (not in your program) normally call _graphgetmem to allocate memory for internal buffers, graphics drivers, and character sets.
-
-The graphics library calls _graphfreemem to release memory previously allocated through _graphgetmem.
-
-You can to control the graphics library memory management by defining your own versions of _graphfreemem and _graphgetmem. (You must declare them exactly as shown.)
-
-The default version of _graphgetmem calls <a href="#" onclick="alert('Only graphics library available.');">malloc</a>; the default version of _graphfreemem calls <a href="#" onclick="alert('Only graphics library available.');">free</a>.
+Routines in the graphics library (not in your program) normally call _graphgetmem to allocate memory for internal buffers, graphics drivers, and character sets.<br><br>
+The graphics library calls _graphfreemem to release memory previously allocated through _graphgetmem.<br><br>
+You can to control the graphics library memory management by defining your own versions of _graphfreemem and _graphgetmem. (You must declare them exactly as shown.)<br><br>
+The default version of _graphgetmem calls <a href="#" onclick="alert('Only graphics library available.');">malloc</a>; the default version of _graphfreemem calls <a href="#" onclick="alert('Only graphics library available.');">free</a>.<br><br>
 
 #### Return Value:  None
 
-<br>
-
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
+[!INCLUDE [](../includes/portability.md)]
 
 ### See Also:
-<div class="data">
-<a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>
-</div>
+<div class="data"><a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>
+<br></div>
 
 ### Example (for both functions):
 
@@ -110,3 +101,5 @@ void far _graphfreemem(void far *ptr, unsigned size)
    farfree(ptr);
 }
 ```
+
+<br>

@@ -13,28 +13,18 @@ uid: cleardevice
 <br>
 
 ### Remarks:
-cleardevice erases the entire graphics screen and moves the CP (current position) to home (0,0).
-
-(Erasing consists of filling with the current background color.)
+cleardevice erases the entire graphics screen and moves the CP (current position) to home (0,0).<br><br>
+(Erasing consists of filling with the current background color.)<br><br>
 
 #### Return Value:  None
 
-<br>
+[!INCLUDE [](../includes/portability.md)]
 
-### Portability:
-<div class="data">
- ╔ DOS ╤ UNIX ╤ Windows ╤ ANSI C ╤ C++ Only ╗
- ║ Yes │      │         │        │          ║
- ╚═════╧══════╧═════════╧════════╧══════════╝
-</div>
-
-It works only with IBM PCs and compatibles equipped with supported graphics display adapters.
-
+It works only with IBM PCs and compatibles equipped with supported graphics display adapters.<br><br>
 
 ### See Also:
-<div class="data">
-<a href="clearviewport.md">  clearviewport</a>
-</div>
+<div class="data"><a href="clearviewport.md">  clearviewport</a>
+<br></div>
 
 ### Example:
 
@@ -90,3 +80,5 @@ int main(void)
    return 0;
 }
 ```
+
+<br>
