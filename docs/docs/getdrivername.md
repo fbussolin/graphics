@@ -1,71 +1,77 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgetdrivernameÞ                 <GRAPHICS.H>
- ßßßßßßßßßßßßßßß
- Returns a pointer to the name of the current graphics driver
+---
+uid: getdrivername
+---
+[!INCLUDE [](graphics_header.md)]
+# getdrivername
 
- Declaration:  char *far getdrivername(void);
+#### Returns a pointer to the name of the current graphics driver
 
- Remarks:
-After a call to initgraph, getdrivername returns the name of the driver that
-is currently loaded.
+<br>
 
- Return Value:
-Returns a pointer to a string with the name of the currently loaded graphics
-driver.
+#### Declaration:  char *far getdrivername(void);
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+<br>
 
- See Also:
-  initgraph
+### Remarks:
+After a call to initgraph, getdrivername returns the name of the driver that is currently loaded.<br><br>
 
- Example:
+#### Return Value:
+Returns a pointer to a string with the name of the currently loaded graphics driver.<br>
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+[!INCLUDE [](portability.md)]
 
- int main(void)
- {
- /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
+### See Also:
+<div class="data"><a href="initgraph.md">  initgraph</a>
 
- /* stores the device driver name */
-    char *drivername;
+<br>
 
- /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+### Example:
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
- /* read result of initialization */
-    errorcode = graphresult();
- /* an error occurred */
-    if (errorcode != grOk)
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
- /* terminate with an error code */
-       exit(1);
-    }
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
 
-    setcolor(getmaxcolor());
+   /* stores the device driver name */
+   char *drivername;
 
- /* get name of the device driver in use */
-    drivername = getdrivername();
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
- /* for centering text on the screen */
-    settextjustify(CENTER_TEXT, CENTER_TEXT);
+   /* read result of initialization */
+   errorcode = graphresult();
+   /* an error occurred */
+   if (errorcode != grOk)
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      /* terminate with an error code */
+      exit(1);
+   }
 
- /* output the name of the driver */
-    outtextxy(getmaxx() / 2, getmaxy() / 2,
-              drivername);
+   setcolor(getmaxcolor());
 
- /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* get name of the device driver in use */
+   drivername = getdrivername();
 
+   /* for centering text on the screen */
+   settextjustify(CENTER_TEXT, CENTER_TEXT);
+
+   /* output the name of the driver */
+   outtextxy(getmaxx() / 2, getmaxy() / 2,
+             drivername);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

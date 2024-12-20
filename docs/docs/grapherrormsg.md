@@ -1,63 +1,71 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgrapherrormsgÞ                 <GRAPHICS.H>
- ßßßßßßßßßßßßßßß
- Returns a pointer to an error message string
+---
+uid: grapherrormsg
+---
+[!INCLUDE [](graphics_header.md)]
+# grapherrormsg
 
- Declaration:  char *far grapherrormsg(int errorcode);
+#### Returns a pointer to an error message string
 
- Remarks:
-grapherrormsg returns a pointer to the error message string associated with
-errorcode, the value returned by graphresult.
+<br>
 
-See the errno Help screen for a list of error messages and mnemonics.
+#### Declaration:  char \*far grapherrormsg(int errorcode);
 
- Return Value:
+<br>
+
+### Remarks:
+grapherrormsg returns a pointer to the error message string associated with errorcode, the value returned by graphresult.<br><br>
+See the <a href="#" onclick="alert('Only graphics library available.');">errno</a> Help screen for a list of error messages and mnemonics.<br><br>
+
+#### Return Value:
 Returns a pointer to an error message string.
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  graphresult
+### See Also:
+<div class="data"><a href="graphresult.md">  graphresult</a>
+<br></div>
 
- Example:
+### Example:
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+<br>
 
- #define NONSENSE -50
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
- int main(void)
- {
-    /* FORCE AN ERROR TO OCCUR */
-    int gdriver = NONSENSE, gmode, errorcode;
+#define NONSENSE -50
 
-    /* initialize graphics mode */
-    initgraph(&gdriver, &gmode, "");
+int main(void)
+{
+   /* FORCE AN ERROR TO OCCUR */
+   int gdriver = NONSENSE, gmode, errorcode;
 
-    /* read result of initialization */
-    errorcode = graphresult();
+   /* initialize graphics mode */
+   initgraph(&gdriver, &gmode, "");
 
-    /* if an error occurred, then output a */
-    /* descriptive error message.          */
-    if (errorcode != grOk)
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+   /* read result of initialization */
+   errorcode = graphresult();
 
-    /* draw a line */
-    line(0, 0, getmaxx(), getmaxy());
+   /* if an error occurred, then output a */
+   /* descriptive error message.          */
+   if (errorcode != grOk)
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* draw a line */
+   line(0, 0, getmaxx(), getmaxy());
 
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

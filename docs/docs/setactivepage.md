@@ -1,46 +1,46 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýsetactivepage, setvisualpageÞ  <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-  þ setactivepage sets the active page for graphics output
-  þ setvisualpage sets the visual graphics page number
+---
+uid: setactivepage
+---
+[!INCLUDE [](graphics_header.md)]
+# setactivepage, setvisualpage
+* setactivepage sets the active page for graphics output
+* setvisualpage sets the visual graphics page number
 
- Declaration:
-  þ void far setactivepage(int page);
-  þ void far setvisualpage(int page);
+<br>
 
- Remarks:
-þ setactivepage makes page the active graphics page. All subsequent graphics
-output will be directed to that graphics page.
+#### Declaration:
+* void far setactivepage(int page);
+* void far setvisualpage(int page);
 
-þ setvisualpage makes page the visual graphics page.
+<br>
 
-The active graphics page might not be the one you see onscreen, depending on
-how many graphics pages are available on your system. Only the EGA, VGA, and
-Hercules graphics cards support multiple pages.
+### Remarks:
+■ setactivepage makes page the active graphics page. All subsequent graphics output will be directed to that graphics page.<br><br>
+■ setvisualpage makes page the visual graphics page.<br><br>
+The active graphics page might not be the one you see onscreen, depending on how many graphics pages are available on your system. Only the EGA, VGA, and Hercules graphics cards support multiple pages.<br><br>
+The visual page is the one actually displayed on the screen. Graphics functions write output to the active page.<br><br>
 
-The visual page is the one actually displayed on the screen. Graphics
-functions write output to the active page.
+#### Return Value:
+&nbsp;&nbsp;None
 
- Return Value:
-  None
+[!INCLUDE [](portability.md)]
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+### See Also:
+<div class="data"><a href="">  graphresult  </a>
+<br></div>
 
- See Also:
-  graphresult
+### Example (for both functions):
 
- Example (for both functions):
+<br>
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
- int main(void)
- {
+int main(void)
+{
    /* select a driver and mode that supports multiple pages. */
    int gdriver = EGA, gmode = EGAHI, errorcode;
    int x, y, ht;
@@ -52,10 +52,10 @@ functions write output to the active page.
    errorcode = graphresult();
    if (errorcode != grOk)  /* an error occurred */
    {
-     printf("Graphics error: %s\n", grapherrormsg(errorcode));
-     printf("Press any key to halt:");
-     getch();
-     exit(1); /* terminate with an error code */
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
    }
 
    x = getmaxx() / 2;
@@ -88,5 +88,7 @@ functions write output to the active page.
    getch();
    closegraph();
    return 0;
- }
+}
+```
 
+<br>

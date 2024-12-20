@@ -1,95 +1,103 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýgetpixel, putpixelÞ            <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßßßßß
-  þ getpixel gets the color of a specified pixel
-  þ putpixel plots a pixel at a specified point
+---
+uid: getpixel
+---
+[!INCLUDE [](graphics_header.md)]
+# getpixel, putpixel
+* getpixel gets the color of a specified pixel
+* putpixel plots a pixel at a specified point
 
- Declaration:
-  þ unsigned far getpixel(int x, int y);
-  þ void far putpixel(int x, int y, int color);
+<br>
 
- Remarks:
-getpixel gets the color of the pixel located at (x,y).
+#### Declaration:
+* unsigned far getpixel(int x, int y);
+* void far putpixel(int x, int y, int color);
 
-putpixel plots a point in the color defined by color at (x,y).
+<br>
 
- Return Value:
-  þ getpixel returns the color of the given pixel
-  þ putpixel does not return
+### Remarks:
+getpixel gets the color of the pixel located at (x,y).<br><br>
+putpixel plots a point in the color defined by color at (x,y).<br><br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+#### Return Value:
+* getpixel returns the color of the given pixel
+* putpixel does not return
 
- See Also:
-  getimage/putimage
+[!INCLUDE [](portability.md)]
 
- Example (for both functions):
+### See Also:
+<div class="data"><a href="getimage.md">  getimage/putimage</a>
+<br></div>
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
- #include <dos.h>
+### Example (for both functions):
 
- #define PIXEL_COUNT 1000
- #define DELAY_TIME  100  /* in milliseconds */
+<br>
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int i, x, y, color, maxx, maxy,
-        maxcolor, seed;
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <dos.h>
 
- /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+#define PIXEL_COUNT 1000
+#define DELAY_TIME  100  /* in milliseconds */
 
- /* read result of initialization */
-    errorcode = graphresult();
- /* an error occurred */
-    if (errorcode != grOk)
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
- /* terminate with an error code */
-       exit(1);
-    }
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int i, x, y, color, maxx, maxy,
+       maxcolor, seed;
 
-    maxx = getmaxx() + 1;
-    maxy = getmaxy() + 1;
-    maxcolor = getmaxcolor() + 1;
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    while (!kbhit())
-    {
- /* seed the random number generator */
-       seed = random(32767);
-       srand(seed);
-       for (i=0; i<PIXEL_COUNT; i++)
-       {
-          x = random(maxx);
-          y = random(maxy);
-          color = random(maxcolor);
-          putpixel(x, y, color);
-       }
+   /* read result of initialization */
+   errorcode = graphresult();
+   /* an error occurred */
+   if (errorcode != grOk)
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      /* terminate with an error code */
+      exit(1);
+   }
 
-       delay(DELAY_TIME);
-       srand(seed);
-       for (i=0; i<PIXEL_COUNT; i++)
-       {
-          x = random(maxx);
-          y = random(maxy);
-          color = random(maxcolor);
-          if (color == getpixel(x, y))
-             putpixel(x, y, 0);
-       }
-    }
+   maxx = getmaxx() + 1;
+   maxy = getmaxy() + 1;
+   maxcolor = getmaxcolor() + 1;
 
- /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   while (!kbhit())
+   {
+      /* seed the random number generator */
+      seed = random(32767);
+      srand(seed);
+      for (i=0; i<PIXEL_COUNT; i++)
+      {
+         x = random(maxx);
+         y = random(maxy);
+         color = random(maxcolor);
+         putpixel(x, y, color);
+      }
 
+      delay(DELAY_TIME);
+      srand(seed);
+      for (i=0; i<PIXEL_COUNT; i++)
+      {
+         x = random(maxx);
+         y = random(maxy);
+         color = random(maxcolor);
+         if (color == getpixel(x, y))
+            putpixel(x, y, 0);
+      }
+   }
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: arccoordstype
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;arccoordstype
 
 Used to get current viewport settings from [getarccoords](getarccoords.md).<br>

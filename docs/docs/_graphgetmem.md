@@ -1,7 +1,7 @@
 ---
 uid: _graphgetmem
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # _graphfreemem, _graphgetmem
 
 #### &nbsp;User hooks into graphics memory deallocation
@@ -22,7 +22,7 @@ The default version of _graphgetmem calls <a href="#" onclick="alert('Only graph
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>

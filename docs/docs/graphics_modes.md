@@ -1,7 +1,7 @@
 ---
 uid: graphics_modes
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;graphics_modes
 
 ##### Enum: Graphics modes for each BGI driver

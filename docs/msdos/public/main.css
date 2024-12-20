@@ -50,6 +50,10 @@
     padding-left: 1.5rem !important;
 }
 
+.content article ul {
+	list-style-position: outside;
+}
+
 .content article li {
 	list-style-type: "■";
 	padding-inline-start: 1ch;

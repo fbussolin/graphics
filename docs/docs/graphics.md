@@ -43,11 +43,11 @@ uid: graphics
 <a href="arccoordstype.md">  arccoordstype    </a> <a href="CGA_COLORS.md">  CGA_COLORS       </a> <a href="COLORS.md">  COLORS           </a>
 <a href="EGA_colors.md">  EGA_colors       </a> <a href="fill_patterns.md">  fill_patterns    </a> <a href="fillsettingstype.md">  fillsettingstype </a>
 <a href="font_names.md">  font_names       </a> <a href="graphics_drivers.md">  graphics_drivers </a> <a href="graphics_errors.md">  graphics_errors  </a>
-<a href="graphics_modes.md">  graphics_modes   </a> <a href="HORIZ_DIR.md">  HORIZ_DIR        </a> <a href="line_styles.md">  line_styles      </a>
+<a href="graphics_modes.md">  graphics_modes   </a> <a href="text_directions.md">  HORIZ_DIR        </a> <a href="line_styles.md">  line_styles      </a>
 <a href="line_widths.md">  line_widths      </a> <a href="linesettingstype.md">  linesettingstype </a> <a href="MAXCOLORS.md">  MAXCOLORS        </a>
 <a href="palettetype.md">  palettetype      </a> <a href="pointtype.md">  pointtype        </a> <a href="putimage_ops.md">  putimage_ops     </a>
 <a href="text_just.md">  text_just        </a> <a href="text_directions.md">  text directions  </a> <a href="textsettingstype.md">  textsettingstype </a>
-<a href="USER_CHAR_SIZE.md">  USER_CHAR_SIZE   </a> <a href="VERT_DIR.md">  VERT_DIR         </a> <a href="viewporttype.md">  viewporttype     </a><br>
+<a href="USER_CHAR_SIZE.md">  USER_CHAR_SIZE   </a> <a href="text_directions.md">  VERT_DIR         </a> <a href="viewporttype.md">  viewporttype     </a><br>
 </div>
 
 ## See Also  

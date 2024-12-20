@@ -1,70 +1,78 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýgetx, getyÞ                    <GRAPHICS.H>
- ßßßßßßßßßßßß
-  þ getx returns the current position's x coordinate
-  þ gety returns the current position's y coordinate
+---
+uid: getx
+---
+[!INCLUDE [](graphics_header.md)]
+# getx, gety
 
- Declaration:
-  þ int far getx(void);
-  þ int far gety(void);
+* getx returns the current position's x coordinate
+* gety returns the current position's y coordinate
 
- Remarks:
-þ getx returns the x-coordinate of the current graphics position.
+<br>
 
-þ gety returns the y-coordinate of the current graphics position.
+#### Declaration:
+* int far getx(void);
+* int far gety(void);
 
-The values are viewport-relative.
+<br>
 
- Return Value:
-  þ getx: x-coordinate of current position
-  þ gety: y-coordinate of current position
+### Remarks:
+■ getx returns the x-coordinate of the current graphics position.<br><br>
+■ gety returns the y-coordinate of the current graphics position.<br><br>
+The values are viewport-relative.<br><br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+#### Return Value:
+* getx: x-coordinate of current position
+* gety: y-coordinate of current position
 
- See Also:
-  getmaxx/getmaxy   getviewsettings   moveto
+[!INCLUDE [](portability.md)]
 
- Example (for both functions):
+### See Also:
+<div class="data"><a href="getmaxx.md">  getmaxx/getmaxy</a> <a href="getviewsettings.md">  getviewsettings</a> <a href="moveto.md">  moveto         </a>
+<br></div>
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+### Example (for both functions):
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    char msg[80];
+<br>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   char msg[80];
 
-    /* move to the screen center point */
-    moveto(getmaxx() / 2, getmaxy() / 2);
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* create a message string */
-    sprintf(msg, "<-(%d, %d) is here.", getx(), gety());
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* display the message */
-    outtext(msg);
+   /* move to the screen center point */
+   moveto(getmaxx() / 2, getmaxy() / 2);
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* create a message string */
+   sprintf(msg, "<-(%d, %d) is here.", getx(), gety());
 
+   /* display the message */
+   outtext(msg);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: fill_patterns
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;fill_patterns
 
 ##### Enum: Fill patterns for [getfillsettings](getfillsettings.md) and [setfillstyle](setfillstyle.md).

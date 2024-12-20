@@ -1,7 +1,7 @@
 ---
 uid: clearviewport
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # clearviewport
 
 #### Clears the current viewport
@@ -17,7 +17,7 @@ clearviewport erases the viewport and moves the CP (current position) to home (0
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="cleardevice.md">  cleardevice    </a> <a href="getviewsettings.md">  getviewsettings</a> <a href="setviewport.md">  setviewport    </a>

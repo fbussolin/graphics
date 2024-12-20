@@ -1,111 +1,119 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýgetfillpattern, setfillpatternÞ <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-  þ getfillpattern copies a user-defined fill pattern into memory
-  þ setfillpattern selects a user-defined fill pattern
+---
+uid: getfillpattern
+---
+[!INCLUDE [](graphics_header.md)]
+# getfillpattern, setfillpattern
+* getfillpattern copies a user-defined fill pattern into memory
+* setfillpattern selects a user-defined fill pattern
 
- Declaration:
-  þ void far getfillpattern(char far *pattern);
-  þ void far setfillpattern(char far *upattern, int color);
+<br>
 
- Remarks:
-getfillpattern copies the user-defined fill pattern (set by setfillpattern)
-into the 8-byte area *pattern.
+#### Declaration:
+* void far getfillpattern(char far *pattern);
+* void far setfillpattern(char far *upattern, int color);
 
-setfillpattern sets the current fill pattern to a user-defined 8x8 pattern.
+<br>
 
-  Argument ³ Function ³ What Argument Is/Does
- ÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  pattern  ³ (get...) ³ Points to a sequence of 8 bytes; each byte
-           ³          ³ corresponds to 8 pixels in the pattern fetched
-  upattern ³ (set...) ³ Points to a sequence of 8 bytes; each byte
-           ³          ³ corresponds to 8 pixels in the user-defined pattern
+### Remarks:
+getfillpattern copies the user-defined fill pattern (set by setfillpattern) into the 8-byte area *pattern.<br><br>
+setfillpattern sets the current fill pattern to a user-defined 8x8 pattern.<br>
 
-Whenever a bit in a pattern's byte is set to 1, the corresponding pixel is
-plotted.
+<div class="data">
+  Argument │ Function │ What Argument Is/Does
+ ══════════╪══════════╪══════════════════════════════════════════════════════
+  pattern  │ (get...) │ Points to a sequence of 8 bytes; each byte
+           │          │ corresponds to 8 pixels in the pattern fetched
+  upattern │ (set...) │ Points to a sequence of 8 bytes; each byte
+           │          │ corresponds to 8 pixels in the user-defined pattern
+<br></div>
 
-For example, the following user-defined fill pattern represents a
-checkerboard:
+Whenever a bit in a pattern's byte is set to 1, the corresponding pixel is plotted.<br><br>
+For example, the following user-defined fill pattern represents a checkerboard:<br>
 
+<div class="data">
  char checkerboard[8] = {
-   0xAA,   /* 10101010  =  Û Û Û Û   */
-   0x55,   /* 01010101  =   Û Û Û Û  */
-   0xAA,   /* 10101010  =  Û Û Û Û   */
-   0x55,   /* 01010101  =   Û Û Û Û  */
-   0xAA,   /* 10101010  =  Û Û Û Û   */
-   0x55,   /* 01010101  =   Û Û Û Û  */
-   0xAA,   /* 10101010  =  Û Û Û Û   */
-   0x55    /* 01010101  =   Û Û Û Û  */
+   0xAA,   /* 10101010  =  █ █ █ █   */
+   0x55,   /* 01010101  =   █ █ █ █  */
+   0xAA,   /* 10101010  =  █ █ █ █   */
+   0x55,   /* 01010101  =   █ █ █ █  */
+   0xAA,   /* 10101010  =  █ █ █ █   */
+   0x55,   /* 01010101  =   █ █ █ █  */
+   0xAA,   /* 10101010  =  █ █ █ █   */
+   0x55    /* 01010101  =   █ █ █ █  */
  };
+<br></div>
 
- Return Value:  None
+##### Return Value:  None
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  fill_patterns     getfillsettings   graphresult       sector
-  setfillstyle
+### See Also:
+<div class="data"><a href="fill_patterns.md">  fill_patterns  </a> <a href="getfillsettings.md">  getfillsettings</a> <a href="graphresult.md">  graphresult    </a> <a href="sector.md">  sector         </a>
+<a href="setfillstyle.md">  setfillstyle   </a>
+<br></div>
 
- Example (for both functions):
+### Example (for both functions):
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+<br>
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int maxx, maxy;
-    char pattern[8] = {0x00, 0x70, 0x20, 0x27, 0x25, 0x27, 0x04, 0x04};
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int maxx, maxy;
+   char pattern[8] = {0x00, 0x70, 0x20, 0x27, 0x25, 0x27, 0x04, 0x04};
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    maxx = getmaxx();
-    maxy = getmaxy();
-    setcolor(getmaxcolor());
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* select a user defined fill pattern */
-    setfillpattern(pattern, getmaxcolor());
+   maxx = getmaxx();
+   maxy = getmaxy();
+   setcolor(getmaxcolor());
 
-    /* fill the screen with the pattern */
-    bar(0, 0, maxx, maxy);
+   /* select a user defined fill pattern */
+   setfillpattern(pattern, getmaxcolor());
 
-    getch();
+   /* fill the screen with the pattern */
+   bar(0, 0, maxx, maxy);
 
-    /* get the current user defined fill pattern */
-    getfillpattern(pattern);
+   getch();
 
-    /* alter the pattern we grabbed */
-    pattern[4] -= 1;
-    pattern[5] -= 3;
-    pattern[6] += 3;
-    pattern[7] -= 4;
+   /* get the current user defined fill pattern */
+   getfillpattern(pattern);
 
-    /* select our new pattern */
-    setfillpattern(pattern, getmaxcolor());
+   /* alter the pattern we grabbed */
+   pattern[4] -= 1;
+   pattern[5] -= 3;
+   pattern[6] += 3;
+   pattern[7] -= 4;
 
-    /* fill the screen with the new pattern */
-    bar(0, 0, maxx, maxy);
+   /* select our new pattern */
+   setfillpattern(pattern, getmaxcolor());
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* fill the screen with the new pattern */
+   bar(0, 0, maxx, maxy);
 
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

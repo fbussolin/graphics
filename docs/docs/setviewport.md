@@ -1,39 +1,40 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝsetviewportÞ                   <GRAPHICS.H>
- ßßßßßßßßßßßßß
- Sets the current viewport for graphics output
+---
+uid: setviewport
+---
+[!INCLUDE [](graphics_header.md)]
+# setviewport
 
- Declaration:
-   void far setviewport(int left, int top, int right, int bottom, int clip);
+#### Sets the current viewport for graphics output
 
- Remarks:
-setviewport establishes a new viewport for graphics output.
+<br>
 
-The viewport's corners are given in absolute screen coordinates by
-(left,top) and (right,bottom).
+#### Declaration:
+&nbsp;&nbsp;&nbsp;void far setviewport(int left, int top, int right, int bottom, int clip);
 
-The current position (CP) is moved to (0,0) in the new window.
+<br>
 
-The clip argument determines whether drawings are clipped (truncated) at the
-current viewport boundaries. If clip is non-zero, all drawings will be
-clipped to the current viewport.
+### Remarks:
+setviewport establishes a new viewport for graphics output.<br><br>
+The viewport's corners are given in absolute screen coordinates by (left,top) and (right,bottom).<br><br>
+The current position (CP) is moved to (0,0) in the new window.<br><br>
+The clip argument determines whether drawings are clipped (truncated) at the current viewport boundaries. If clip is non-zero, all drawings will be clipped to the current viewport.<br><br>
 
- Return Value:
-setviewport does not return.
+#### Return Value:
+setviewport does not return.<br><br>
 
-If invalid input is passed to setviewport, graphresult returns -11, and the
-current view settings remain unchanged.
+If invalid input is passed to setviewport, graphresult returns -11, and the current view settings remain unchanged.
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  clearviewport     getviewsettings   graphresult
+### See Also:
+<div class="data"><a href="clearviewport.md">  clearviewport  </a> <a href="getviewsettings.md">  getviewsettings</a> <a href="graphresult.md">  graphresult    </a>
+<br></div>
 
- Example:
+### Example:
 
+<br>
+
+```
  #include <graphics.h>
  #include <stdlib.h>
  #include <stdio.h>
@@ -76,4 +77,6 @@ viewport */
     closegraph();
     return 0;
  }
+```
 
+<br>

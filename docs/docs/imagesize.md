@@ -1,105 +1,114 @@
- ÜÜÜÜÜÜÜÜÜÜÜ
- ÝimagesizeÞ                     <GRAPHICS.H>
- ßßßßßßßßßßß
- Returns the number of bytes required to store a bit image
+---
+uid: imagesize
+---
+[!INCLUDE [](graphics_header.md)]
+# imagesize
 
- Declaration:
-   unsigned far imagesize(int left, int top, int right, int bottom);
+#### Returns the number of bytes required to store a bit image
 
- Remarks:
-imagesize determines the size of the memory area required to store a bit
-image.
+<br>
 
- Return Value:
-  þ On success, returns the size of the
-    required memory area in bytes.
-  þ On error (if the size required for the
-    selected image is >= (64K - 1) bytes),
-    returns 0xFFFF (-1)
+#### Declaration:
+&nbsp;&nbsp;&nbsp;unsigned far imagesize(int left, int top, int right, int bottom);
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+<br>
 
- See Also:
-  getimage   putimage
+### Remarks:
+imagesize determines the size of the memory area required to store a bit image.<br><br>
 
- Example:
+#### Return Value:
+* On success, returns the size of the  
+required memory area in bytes.
+* On error (if the size required for the  
+selected image is >= (64K - 1) bytes),  
+returns 0xFFFF (-1)
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+[!INCLUDE [](portability.md)]
 
- #define ARROW_SIZE 10
+### See Also:
+<div class="data"><a href="getimage.md">  getimage</a> <a href="putimage.md">  putimage</a>
+<br></div>
 
- void draw_arrow(int x, int y);
+### Example:
 
- int main(void)
- {
-    /* request autodetection */
-    int gdriver = DETECT, gmode, errorcode;
-    void *arrow;
-    int x, y, maxx;
-    unsigned int size;
+<br>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+#define ARROW_SIZE 10
 
-    maxx = getmaxx();
-    x = 0;
-    y = getmaxy() / 2;
+void draw_arrow(int x, int y);
 
-    /* draw the image to be grabbed */
-    draw_arrow(x, y);
+int main(void)
+{
+   /* request autodetection */
+   int gdriver = DETECT, gmode, errorcode;
+   void *arrow;
+   int x, y, maxx;
+   unsigned int size;
 
-    /* calculate the size of the image */
-    size = imagesize(x, y-ARROW_SIZE, x+(4*ARROW_SIZE), y+ARROW_SIZE);
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* allocate memory to hold the image */
-    arrow = malloc(size);
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* grab the image */
-    getimage(x, y-ARROW_SIZE, x+(4*ARROW_SIZE), y+ARROW_SIZE, arrow);
+   maxx = getmaxx();
+   x = 0;
+   y = getmaxy() / 2;
 
-    /* repeat until a key is pressed */
-    while (!kbhit())
-    {
-       /* erase old image */
-       putimage(x, y-ARROW_SIZE, arrow, XOR_PUT);
+   /* draw the image to be grabbed */
+   draw_arrow(x, y);
 
-       x += ARROW_SIZE;
-       if (x >= maxx)
-           x = 0;
+   /* calculate the size of the image */
+   size = imagesize(x, y-ARROW_SIZE, x+(4*ARROW_SIZE), y+ARROW_SIZE);
 
-       /* plot new image */
-       putimage(x, y-ARROW_SIZE, arrow, XOR_PUT);
-    }
+   /* allocate memory to hold the image */
+   arrow = malloc(size);
 
-    /* clean up */
-    free(arrow);
-    closegraph();
-    return 0;
- }
+   /* grab the image */
+   getimage(x, y-ARROW_SIZE, x+(4*ARROW_SIZE), y+ARROW_SIZE, arrow);
 
- void draw_arrow(int x, int y)
- {
-    /* draw an arrow on the screen */
-    moveto(x, y);
-    linerel(4*ARROW_SIZE, 0);
-    linerel(-2*ARROW_SIZE, -1*ARROW_SIZE);
-    linerel(0, 2*ARROW_SIZE);
-    linerel(2*ARROW_SIZE, -1*ARROW_SIZE);
- }
+   /* repeat until a key is pressed */
+   while (!kbhit())
+   {
+      /* erase old image */
+      putimage(x, y-ARROW_SIZE, arrow, XOR_PUT);
 
+      x += ARROW_SIZE;
+      if (x >= maxx)
+          x = 0;
+
+      /* plot new image */
+      putimage(x, y-ARROW_SIZE, arrow, XOR_PUT);
+   }
+
+   /* clean up */
+   free(arrow);
+   closegraph();
+   return 0;
+}
+
+void draw_arrow(int x, int y)
+{
+   /* draw an arrow on the screen */
+   moveto(x, y);
+   linerel(4*ARROW_SIZE, 0);
+   linerel(-2*ARROW_SIZE, -1*ARROW_SIZE);
+   linerel(0, 2*ARROW_SIZE);
+   linerel(2*ARROW_SIZE, -1*ARROW_SIZE);
+}
+```
+
+<br>

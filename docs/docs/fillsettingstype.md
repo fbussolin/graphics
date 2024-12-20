@@ -1,7 +1,7 @@
 ---
 uid: fillsettingstype
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;fillsettingstype
 
 Used to get current fill settings from [getfillsettings](getfillsettings.md).<br>

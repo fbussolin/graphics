@@ -1,74 +1,80 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgetmodenameÞ                   <GRAPHICS.H>
- ßßßßßßßßßßßßß
-Returns the name of a specified graphics mode
+---
+uid: getmodename
+---
+[!INCLUDE [](graphics_header.md)]
+# getmodename
 
- Declaration:  char * far getmodename(int mode_number);
+#### Returns the name of a specified graphics mode
 
- Remarks:
-getmodename accepts a graphics mode number as input and returns a string
-containing the name of the corresponding graphics mode.
+<br>
 
-The mode names are embedded in each driver.
+#### Declaration:  char * far getmodename(int mode_number);
 
-The return values are useful for building menus or displaying status.
+<br>
 
- Return Value:
-getmodename returns a pointer to a string contining the name of the graphics
-mode.
+### Remarks:
+getmodename accepts a graphics mode number as input and returns a string containing the name of the corresponding graphics mode.<br><br>
+The mode names are embedded in each driver.<br><br>
+The return values are useful for building menus or displaying status.<br><br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+#### Return Value:
+getmodename returns a pointer to a string contining the name of the graphics mode.
 
- See Also:
-  getmaxmode     getmoderange
+[!INCLUDE [](portability.md)]
 
- Example:
+### See Also:
+<div class="data"><a href="getmaxmode.md">  getmaxmode  </a> <a href="getmoderange.md">  getmoderange</a>
+<br></div>
 
-  #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+### Example:
 
- int main(void)
- {
-    /* request autodetection */
-    int gdriver = DETECT, gmode, errorcode;
-    int midx, midy, mode;
-    char numname[80], modename[80];
+<br>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+int main(void)
+{
+   /* request autodetection */
+   int gdriver = DETECT, gmode, errorcode;
+   int midx, midy, mode;
+   char numname[80], modename[80];
 
-    midx = getmaxx() / 2;
-    midy = getmaxy() / 2;
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* get mode number and name strings */
-    mode = getgraphmode();
-    sprintf(numname, "%d is the current mode number.", mode);
-    sprintf(modename, "%s is the current graphics mode.",
-            getmodename(mode));
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* display the information */
-    settextjustify(CENTER_TEXT, CENTER_TEXT);
-    outtextxy(midx, midy, numname);
-    outtextxy(midx, midy+2*textheight("W"), modename);
+   midx = getmaxx() / 2;
+   midy = getmaxy() / 2;
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* get mode number and name strings */
+   mode = getgraphmode();
+   sprintf(numname, "%d is the current mode number.", mode);
+   sprintf(modename, "%s is the current graphics mode.",
+           getmodename(mode));
 
+   /* display the information */
+   settextjustify(CENTER_TEXT, CENTER_TEXT);
+   outtextxy(midx, midy, numname);
+   outtextxy(midx, midy+2*textheight("W"), modename);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: cleardevice
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # cleardevice
 
 #### Clears the graphics screen
@@ -18,7 +18,7 @@ cleardevice erases the entire graphics screen and moves the CP (current position
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 It works only with IBM PCs and compatibles equipped with supported graphics display adapters.<br><br>
 

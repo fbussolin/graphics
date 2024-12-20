@@ -1,8 +1,12 @@
+---
+uid: viewporttype
+---
+[!INCLUDE [](graphics_header.md)]
+###### &nbsp;viewporttype&nbsp;
 
-  viewporttype                   <GRAPHICS.H>
- ßßßßßßßßßßßßßß
-Used to get current viewport settings from getviewsettings.
+<br>Used to get current viewport settings from [getviewsettings](getviewsettings.md).<br>
 
+<div class="data">
   struct viewporttype {
     int  left;
     int  top;
@@ -10,3 +14,6 @@ Used to get current viewport settings from getviewsettings.
     int  bottom;
     int  clip;
   };
+<br></div>
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: graphics_errors
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;graphics_errors
 
 ##### Enum: Error return code from [graphresult](graphresult.md)

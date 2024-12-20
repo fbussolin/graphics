@@ -1,7 +1,7 @@
 ---
 uid: bar
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # bar
 
 #### Draws a bar
@@ -28,7 +28,7 @@ The coordinates are in pixels.<br><br>
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="bar3d.md">  bar3d       </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>

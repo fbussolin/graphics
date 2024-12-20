@@ -1,85 +1,90 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝsetusercharsizeÞ               <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßß
- User-defined character magnification factor for stroked fonts
+---
+uid: setusercharsize
+---
+[!INCLUDE [](graphics_header.md)]
+# setusercharsize
 
- Declaration:
-   void far setusercharsize(int multx, int divx, int multy, int divy);
+#### User-defined character magnification factor for stroked fonts
 
- Remarks:
-setusercharsize gives you finer control over the size of text from stroked
-fonts used with graphics functions.
+<br>
 
-The values set by setusercharsize are active only if charsize = 0, as set by
-a previous call to settextstyle.
+#### Declaration:
+&nbsp;&nbsp;&nbsp;void far setusercharsize(int multx, int divx, int multy, int divy);
 
-With setusercharsize, you specify factors by which the width and height are
-scaled.
+<br>
 
-  þ the default width is scaled by  multx : divx
-  þ the default height is scaled by multy : divy.
+### Remarks:
+setusercharsize gives you finer control over the size of text from stroked fonts used with graphics functions.<br><br>
+The values set by setusercharsize are active only if charsize = 0, as set by a previous call to settextstyle.<br><br>
+With setusercharsize, you specify factors by which the width and height are scaled.<br><br>
+* the default width is scaled by  multx : divx
+* the default height is scaled by multy : divy.
 
-For example, to make text twice as wide and 50% taller than the default, set
-
+<br>For example, to make text twice as wide and 50% taller than the default, set<br>
+<div class="data">
   multx = 2;  divx = 1;    /* 2:1 */
   multy = 3;  divy = 2;    /* 3:2 */
+<br></div>
 
- Return Value:
-  None
+#### Return Value:
+&nbsp;&nbsp;None
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  gettextsettings   graphresult       settextstyle
+### See Also:
+<div class="data"><a href="gettextsettings.md">  gettextsettings</a> <a href="graphresult.md">  graphresult    </a> <a href="settextstyle.md">  settextstyle   </a>
+<br></div>
 
- Example:
+### Example:
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+<br>
 
- int main(void)
- {
-    /* request autodetection */
-    int gdriver = DETECT, gmode, errorcode;
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+int main(void)
+{
+   /* request autodetection */
+   int gdriver = DETECT, gmode, errorcode;
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)      /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1);                 /* terminate with an error code */
-    }
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* select a text style */
-    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)      /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1);                 /* terminate with an error code */
+   }
 
-    /* move to the text starting position */
-    moveto(0, getmaxy() / 2);
+   /* select a text style */
+   settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
 
-    /* output some normal text */
-    outtext("Norm ");
+   /* move to the text starting position */
+   moveto(0, getmaxy() / 2);
 
-    /* make the text 1/3 the normal width */
-    setusercharsize(1, 3, 1, 1);
-    outtext("Short ");
+   /* output some normal text */
+   outtext("Norm ");
 
-    /* make the text 3 times normal width */
-    setusercharsize(3, 1, 1, 1);
-    outtext("Wide");
+   /* make the text 1/3 the normal width */
+   setusercharsize(1, 3, 1, 1);
+   outtext("Short ");
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* make the text 3 times normal width */
+   setusercharsize(3, 1, 1, 1);
+   outtext("Wide");
 
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: COLORS
 ---
-<a class="whitespacepre" href="#" href="#" onclick="window.history.back()"> ← </a>
+<a class="whitespacepre" href="#" onclick="window.history.back()"> ← </a>
 
 &nbsp;&nbsp;COLORS, CGA_COLORS, and EGA_COLORS
 ######  &nbsp;(Enumerated Constants for Colors)&nbsp;
@@ -11,8 +11,8 @@ These tables show
 * the drawing colors available for BGI functions running on CGA and EGA monitors. (Defined in [GRAPHICS.H](graphics.md).)
 
 <div class="data">
-The COLORS constants are used by these text mode functions: <a href="textattr.md">  textattr      </a>
-<a href="textbackground.md">  textbackground</a> <a href="textcolor.md">  textcolor      </a><br>
+The COLORS constants are used by these text mode functions: <a href="#" onclick="alert('Only graphics library available.');">  textattr      </a>
+<a href="#" onclick="alert('Only graphics library available.');">  textbackground</a> <a href="#" onclick="alert('Only graphics library available.');">  textcolor      </a><br>
 The CGA_COLORS and EGA_COLORS constants are used by these BGI graphics
 functions: <a href="setallpalette.md">  setallpalette </a> <a href="setbkcolor.md">  setbkcolor    </a> <a href="setcolor.md">  setcolor      </a> <a href="setpalette.md">  setpalette    </a><br>
 Valid colors depend on the current graphics driver and <a href="graphics_modes.md">current graphics mode</a>.<br><br>

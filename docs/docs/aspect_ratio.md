@@ -1,7 +1,7 @@
 ---
 uid: aspect_ratio
 ---
-<a class="whitespacepre" href="#" href="#" onclick="window.history.back()"> ← </a>
+<a class="whitespacepre" href="#" onclick="window.history.back()"> ← </a>
 
 ## &nbsp;Aspect Ratio
 The graphics system uses the aspect ratio to make sure that circles are round onscreen.<br><br>

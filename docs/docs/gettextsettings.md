@@ -1,104 +1,115 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgettextsettingsÞ               <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßß
- Gets information about the current graphic text font
+---
+uid: gettextsettings
+---
+[!INCLUDE [](graphics_header.md)]
+# gettextsettings
 
- Declaration:
-   void far gettextsettings(struct textsettingstype far *texttypeinfo);
+#### Gets information about the current graphic text font
 
- Remarks:
-gettextsettings fills a structure with information about the current text
-font, direction, size, and justification.
+<br>
 
-  Argument     ³ What It Is/Does
- ÍÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  texttypeinfo ³ Points to the textsettingstype structure
-               ³ that gettextsettings fills in
+#### Declaration:
+&nbsp;&nbsp;&nbsp;void far gettextsettings(struct textsettingstype far \*texttypeinfo);
 
- Return Value:  None
+<br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+### Remarks:
+gettextsettings fills a structure with information about the current text font, direction, size, and justification.<br>
 
- See Also:
-  outtext           outtextxy         registerbgifont   settextjustify
-  settextstyle      setusercharsize   textheight        textwidth
+<div class="data">
+  Argument     │ What It Is/Does
+ ══════════════╪══════════════════════════════════════════
+  texttypeinfo │ Points to the <a href="textsettingstype.md">textsettingstype structure</a>
+               │ that gettextsettings fills in
+<br></div>
 
- Example:
+#### Return Value:  None
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+[!INCLUDE [](portability.md)]
 
- /* the names of the fonts supported */
- char *font[] = { "DEFAULT_FONT",
-                  "TRIPLEX_FONT",
-                  "SMALL_FONT",
-                  "SANS_SERIF_FONT",
-                  "GOTHIC_FONT"
-                };
+### See Also:
+<div class="data"><a href="outtext.md">  outtext        </a> <a href="outtextxy.md">  outtextxy      </a> <a href="registerbgifont.md">  registerbgifont</a> <a href="settextjustify.md">  settextjustify </a>
+<a href="settextstyle.md">  settextstyle   </a> <a href="setusercharsize.md">  setusercharsize</a> <a href="textheight.md">  textheight     </a> <a href="textwidth.md">  textwidth      </a>
+<br></div>
 
- /* the names of the text directions supported */
- char *dir[] = { "HORIZ_DIR", "VERT_DIR" };
+### Example:
 
- /* horizontal text justifications supported */
- char *hjust[] = { "LEFT_TEXT", "CENTER_TEXT", "RIGHT_TEXT" };
+<br>
 
- /* vertical text justifications supported */
- char *vjust[] = { "BOTTOM_TEXT", "CENTER_TEXT", "TOP_TEXT" };
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    struct textsettingstype textinfo;
-    int midx, midy, ht;
-    char fontstr[80], dirstr[80], sizestr[80];
-    char hjuststr[80], vjuststr[80];
+/* the names of the fonts supported */
+char *font[] = { "DEFAULT_FONT",
+                 "TRIPLEX_FONT",
+                 "SMALL_FONT",
+                 "SANS_SERIF_FONT",
+                 "GOTHIC_FONT"
+               };
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+/* the names of the text directions supported */
+char *dir[] = { "HORIZ_DIR", "VERT_DIR" };
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+/* horizontal text justifications supported */
+char *hjust[] = { "LEFT_TEXT", "CENTER_TEXT", "RIGHT_TEXT" };
 
-    midx = getmaxx() / 2;
-    midy = getmaxy() / 2;
+/* vertical text justifications supported */
+char *vjust[] = { "BOTTOM_TEXT", "CENTER_TEXT", "TOP_TEXT" };
 
-    /* get information about current text settings */
-    gettextsettings(&textinfo);
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   struct textsettingstype textinfo;
+   int midx, midy, ht;
+   char fontstr[80], dirstr[80], sizestr[80];
+   char hjuststr[80], vjuststr[80];
 
-    /* convert text information into strings */
-    sprintf(fontstr, "%s is the text style.", font[textinfo.font]);
-    sprintf(dirstr, "%s is the text direction.", dir[textinfo.direction]);
-    sprintf(sizestr, "%d is the text size.", textinfo.charsize);
-    sprintf(hjuststr, "%s is the horizontal justification.",
-            hjust[textinfo.horiz]);
-    sprintf(vjuststr, "%s is the vertical justification.",
-            vjust[textinfo.vert]);
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* display the information */
-    ht = textheight("W");
-    settextjustify(CENTER_TEXT, CENTER_TEXT);
-    outtextxy(midx, midy, fontstr);
-    outtextxy(midx, midy+2*ht, dirstr);
-    outtextxy(midx, midy+4*ht, sizestr);
-    outtextxy(midx, midy+6*ht, hjuststr);
-    outtextxy(midx, midy+8*ht, vjuststr);
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   midx = getmaxx() / 2;
+   midy = getmaxy() / 2;
 
+   /* get information about current text settings */
+   gettextsettings(&textinfo);
+
+   /* convert text information into strings */
+   sprintf(fontstr, "%s is the text style.", font[textinfo.font]);
+   sprintf(dirstr, "%s is the text direction.", dir[textinfo.direction]);
+   sprintf(sizestr, "%d is the text size.", textinfo.charsize);
+   sprintf(hjuststr, "%s is the horizontal justification.",
+           hjust[textinfo.horiz]);
+   sprintf(vjuststr, "%s is the vertical justification.",
+           vjust[textinfo.vert]);
+
+   /* display the information */
+   ht = textheight("W");
+   settextjustify(CENTER_TEXT, CENTER_TEXT);
+   outtextxy(midx, midy, fontstr);
+   outtextxy(midx, midy+2*ht, dirstr);
+   outtextxy(midx, midy+4*ht, sizestr);
+   outtextxy(midx, midy+6*ht, hjuststr);
+   outtextxy(midx, midy+8*ht, vjuststr);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

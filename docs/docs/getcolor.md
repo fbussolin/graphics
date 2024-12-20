@@ -1,46 +1,45 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýgetcolor, setcolorÞ            <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßßßßß
-  þ getcolor returns the current drawing color
-  þ setcolor sets the current drawing color
+---
+uid: getcolor
+---
+[!INCLUDE [](graphics_header.md)]
+# getcolor, setcolor
+* getcolor returns the current drawing color
+* setcolor sets the current drawing color
 
- Declaration:
-  þ int far getcolor(void);
-  þ void far setcolor(int color);
+<br>
 
- Remarks:
-getcolor returns the current drawing color.
+#### Declaration:
+* int far getcolor(void);
+* void far setcolor(int color);
 
-setcolor sets the current drawing color to color, which can range from 0 to
-getmaxcolor.
+<br>
 
-To select a drawing color with setcolor, you can pass either the color
-number or the equivalent color name.
+### Remarks:
+getcolor returns the current drawing color.<br><br>
+setcolor sets the current drawing color to color, which can range from 0 to getmaxcolor.<br><br>
+To select a drawing color with setcolor, you can pass either the color number or the [equivalent color name](COLORS.md).<br><br>
+The drawing color is the value that pixels are set to when the program draws lines, etc.<br><br>
+For example, in CGAC0 mode (palette number 0), the palette contains four colors (background, light green, light red, and yellow):<br>
+* If getcolor returns 1, the current drawing color is light green.
+* Either setcolor(3) or setcolor(CGA_YELLOW) selects yellow as the drawing color.
 
-The drawing color is the value that pixels are set to when the program draws
-lines, etc.
+<br>
 
-For example, in CGAC0 mode (palette number 0), the palette contains four
-colors (background, light green, light red, and yellow):
-  þ If getcolor returns 1, the current drawing
-    color is light green.
-  þ Either setcolor(3) or setcolor(CGA_YELLOW)
-    selects yellow as the drawing color.
+In CGAC3 mode, if getcolor returns 1, the current drawing color is cyan.<br><br>
 
-In CGAC3 mode, if getcolor returns 1, the current drawing color is cyan.
+##### Return Value:
+* getcolor returns the current drawing color.
+* setcolor does not return
 
- Return Value:
-  þ getcolor returns the current drawing color.
-  þ setcolor does not return
+[!INCLUDE [](portability.md)]
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+### See Also:
+<div class="data"><a href="getbkcolor.md">  getbkcolor   </a> <a href="getmaxcolor.md">  getmaxcolor  </a> <a href="getpalette.md">  getpalette   </a> <a href="graphresult.md">  graphresult  </a>
+<a href="setallpalette.md">  setallpalette</a> <a href="setbkcolor.md">  setbkcolor   </a> <a href="setpalette.md">  setpalette   </a>
+<br></div>
 
- See Also:
-  getbkcolor      getmaxcolor     getpalette      graphresult
-  setallpalette   setbkcolor      setpalette
+### Examples:
+<div class="data"><a href="getcolor_example.md">  getcolor example</a> <a href="setcolor_example.md">  setcolor example</a>
+</div>
 
- Examples:
-  getcolor example   setcolor example
+<br>

@@ -1,92 +1,102 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝinstalluserfontÞ               <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßß
- Loads a font file (.CHR) that is not built into the BGI system
+---
+uid: installuserfont
+---
+[!INCLUDE [](graphics_header.md)]
+# installuserfont
 
- Declaration:  int far installuserfont(char far *name);
+#### Loads a font file (.CHR) that is not built into the BGI system
 
- Remarks:
+<br>
 
-  Arg. ³ What It Is/Does
- ÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  name ³ Path name to a font file containing
-       ³ a stroked font
+#### Declaration:  int far installuserfont(char far *name);
 
-You can install up to 20 fonts at one time.
+<br>
 
-installuserfont returns a font ID number that can then be passed to
-settextstyle to select the corresponding font.
+### Remarks:
 
- Return Value:
-  þ On success, returns a font ID number.
-  þ On error (if the internal font table is
-    full), returns -11 (grError).
+<div class="data">
+  Arg. │ What It Is/Does
+ ══════╪══════════════════════════════════════
+  name │ Path name to a font file containing
+       │ a stroked font
+<br></div>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+You can install up to 20 fonts at one time.<br><br>
+installuserfont returns a font ID number that can then be passed to settextstyle to select the corresponding font.<br><br>
 
- See Also:
-  settextstyle
+##### Return Value:
+* On success, returns a font ID number.
+* On error (if the internal font table is  
+full), returns -11 (grError).
 
- Example:
+[!INCLUDE [](portability.md)]
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+### See Also:
+<div class="data"><a href="settextstyle.md">  settextstyle</a>
+<br></div>
 
- /* function prototype */
- void checkerrors(void);
+### Example:
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode;
-    int userfont;
-    int midx, midy;
+<br>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    midx = getmaxx() / 2;
-    midy = getmaxy() / 2;
+/* function prototype */
+void checkerrors(void);
 
-    /* check for any initialization errors */
-    checkerrors();
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode;
+   int userfont;
+   int midx, midy;
 
-    /* install a user defined font file */
-    userfont = installuserfont("USER.CHR");
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* check for any installation errors */
-    checkerrors();
+   midx = getmaxx() / 2;
+   midy = getmaxy() / 2;
 
-    /* select the user font */
-    settextstyle(userfont, HORIZ_DIR, 4);
+   /* check for any initialization errors */
+   checkerrors();
 
-    /* output some text */
-    outtextxy(midx, midy, "Testing!");
+   /* install a user defined font file */
+   userfont = installuserfont("USER.CHR");
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* check for any installation errors */
+   checkerrors();
 
- /* check for and report any graphics errors */
- void checkerrors(void)
- {
-    int errorcode;
+   /* select the user font */
+   settextstyle(userfont, HORIZ_DIR, 4);
 
-    /* read result of last graphics operation */
-    errorcode = graphresult();
-    if (errorcode != grOk)
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1);
-    }
-  }
+   /* output some text */
+   outtextxy(midx, midy, "Testing!");
 
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+
+/* check for and report any graphics errors */
+void checkerrors(void)
+{
+   int errorcode;
+
+   /* read result of last graphics operation */
+   errorcode = graphresult();
+   if (errorcode != grOk)
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1);
+   }
+}
+```
+
+<br>

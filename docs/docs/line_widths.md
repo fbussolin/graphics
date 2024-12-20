@@ -1,13 +1,20 @@
+---
+uid: line_widths
+---
+[!INCLUDE [](graphics_header.md)]
+######  &nbsp;line_widths&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
- line_widths                    <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+<br>Enum: Line widths for [getlinesettings](getlinesettings.md) and [setlinestyle](setlinestyle.md).<br>
 
-Enum: Line widths for getlinesettings and setlinestyle.
+<div class="data">
+    Name    │Value│ Meaning
+════════════╪═════╪══════════════
+ NORM_WIDTH │  1  │ 1 pixel wide
+ THICK_WIDTH│  3  │ 3 pixels wide
+<br></div>
 
-    Name    ³Value³ Meaning
-ÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
- NORM_WIDTH ³  1  ³ 1 pixel wide
- THICK_WIDTH³  3  ³ 3 pixels wide
+### See Also:
+<div class="data"><a href="line_styles.md">  line_styles</a>
+</div>
 
-See Also:
- line_styles
+<br>

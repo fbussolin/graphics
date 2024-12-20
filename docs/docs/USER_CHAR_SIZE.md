@@ -1,17 +1,23 @@
-  USER_CHAR_SIZE
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+---
+uid: USER_CHAR_SIZE
+---
+<a class="whitespacepre" href="#" onclick="window.history.back()"> ← </a>
+###### &nbsp;USER_CHAR_SIZE&nbsp;
 
-User-defined charsize (charsize = character magnification in graphics
-output)
+<br>User-defined charsize (charsize = character magnification in graphics output)<br><br>
+Values define<br>
 
-Values define
+<div class="data">
+ Value│ Display size of 8 x 8 bit-mapped fonts
+ ═════╪════════════════════════════════════════
+   1  │ Display chars in  8 x  8 box onscreen
+   2  │ Display chars in 16 x 16 box onscreen
+  ... │ ...
+  10  │ Display chars in 80 x 80 box onscreen
+<br></div>
 
- Value³ Display size of 8 x 8 bit-mapped fonts
- ÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-   1  ³ Display chars in  8 x  8 box onscreen
-   2  ³ Display chars in 16 x 16 box onscreen
-  ... ³ ...
-  10  ³ Display chars in 80 x 80 box onscreen
+### See Also:
+<div class="data"><a href="gettextsettings.md">  gettextsettings </a> <a href="settextstyle.md">  settextstyle    </a> <a href="setusercharsize.md">  setusercharsize </a> <a href="textsettingstype.md">  textsettingstype</a>
+<br></div>
 
- See Also:
-  gettextsettings    settextstyle       setusercharsize    textsettingstype
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: graphics_drivers
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;graphics_drivers
 
 ##### Enum: BGI graphics drivers

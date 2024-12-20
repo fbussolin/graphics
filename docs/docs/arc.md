@@ -1,7 +1,7 @@
 ---
 uid: arc
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # arc, circle, pieslice
 * arc draws a circular arc
 * circle draws a circle
@@ -53,7 +53,7 @@ If your system runs on a CGA or monochrome adapter, pass 1 to those functions th
 
 ##### Return Value: None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="ellipse.md">  ellipse        </a> <a href="fill_patterns.md">  fill_patterns  </a> <a href="fillellipse.md">  fillellipse    </a> <a href="getarccoords.md">  getarccoords   </a>

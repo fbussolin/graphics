@@ -1,18 +1,25 @@
+---
+uid: palettetype
+---
+[!INCLUDE [](graphics_header.md)]
+###### &nbsp;palettetype&nbsp;
 
-  palettetype                    <GRAPHICS.H>
- ßßßßßßßßßßßßß
-Contains palette information for the current graphics driver when calling
-getpalette, setpalette, and setallpalette.
+Contains palette information for the current graphics driver when calling [getpalette](getpalette.md), [setpalette](setpalette.md), and [setallpalette](setallpalette.md).<br>
 
+<div class="data">
   struct palettetype {
     unsigned char  size;
-    signed   char  colors[MAXCOLORS+1];
+    signed   char  colors[<a href="MAXCOLORS.md">MAXCOLORS</a>+1];
   };
+</div>
+<div class="data">
+  Element│ What It Is/Does
+ ════════╪═══════════════════════════════════════════════════════════════════
+  size   │ Gives the number of colors in the palette for the current
+         │ graphics driver in the current mode.
+  colors │ An array of size bytes containing the actual raw color numbers
+         │ for each entry in the palette. If an element of colors is
+         │ -1, the palette color for that entry is not changed.
+</div>
 
-  Element³ What It Is/Does
- ÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  size   ³ Gives the number of colors in the palette for the current
-         ³ graphics driver in the current mode.
-  colors ³ An array of size bytes containing the actual raw color numbers
-         ³ for each entry in the palette. If an element of colors is
-         ³ -1, the palette color for that entry is not changed.
+<br>

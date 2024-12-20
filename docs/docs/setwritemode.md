@@ -1,87 +1,96 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝsetwritemodeÞ                  <GRAPHICS.H>
- ßßßßßßßßßßßßßß
- Sets the writing mode for line drawing in graphics mode
+---
+uid: setwritemode
+---
+[!INCLUDE [](graphics_header.md)]
+# setwritemode
 
- Declaration:  void far setwritemode(int mode);
+#### Sets the writing mode for line drawing in graphics mode
 
- Remarks:
-Symbolic constants are defined for mode. Each constant corresponds to a
-binary operation between each byte in the line and the corresponding bytes
-onscreen.
+<br>
 
-  Constant ³Value³ What It Means
- ÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  COPY_PUT ³  0  ³ Uses the assembly language MOV instruction, overwriting
-           ³     ³ with the line whatever is on the screen.
-  XOR_PUT  ³  1  ³ Uses the XOR command to combine the line with the
-           ³     ³ screen.
-           ³     ³ Two successive XOR commands will erase the line and
-           ³     ³ restore the screen to its original appearance.
+#### Declaration:  void far setwritemode(int mode);
 
-setwritemode currently works only with line, linerel, lineto, rectangle, and
-drawpoly.
+<br>
 
- Return Value:
-  None
+### Remarks:
+Symbolic constants are defined for mode. Each constant corresponds to a binary operation between each byte in the line and the corresponding bytes onscreen.<br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+<div class="data">
+  Constant │Value│ What It Means
+ ══════════╪═════╪════════════════════════════════════════════════════════
+  COPY_PUT │  0  │ Uses the assembly language MOV instruction, overwriting
+           │     │ with the line whatever is on the screen.
+  XOR_PUT  │  1  │ Uses the XOR command to combine the line with the
+           │     │ screen.
+           │     │ Two successive XOR commands will erase the line and
+           │     │ restore the screen to its original appearance.
+<br></div>
 
- See Also:
-  drawpoly    line        linerel     lineto      putimage    rectangle
+setwritemode currently works only with line, linerel, lineto, rectangle, and drawpoly.<br><br>
 
- Example:
+#### Return Value:
+&nbsp;&nbsp;None
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+[!INCLUDE [](portability.md)]
 
- int main()
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int xmax, ymax;
+### See Also:
+<div class="data"><a href="drawpoly.md">  drawpoly </a> <a href="line.md">  line     </a> <a href="linerel.md">  linerel  </a> <a href="lineto.md">  lineto   </a> <a href="putimage.md">  putimage </a> <a href="rectangle.md">  rectangle</a>
+<br></div>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+### Example:
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+<br>
 
-    xmax = getmaxx();
-    ymax = getmaxy();
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* select XOR drawing mode */
-    setwritemode(XOR_PUT);
+int main()
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int xmax, ymax;
 
-    /* draw a line */
-    line(0, 0, xmax, ymax);
-    getch();
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* erase the line by drawing over it */
-    line(0, 0, xmax, ymax);
-    getch();
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* select overwrite drawing mode */
-    setwritemode(COPY_PUT);
+   xmax = getmaxx();
+   ymax = getmaxy();
 
-    /* draw a line */
-    line(0, 0, xmax, ymax);
+   /* select XOR drawing mode */
+   setwritemode(XOR_PUT);
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* draw a line */
+   line(0, 0, xmax, ymax);
+   getch();
 
+   /* erase the line by drawing over it */
+   line(0, 0, xmax, ymax);
+   getch();
+
+   /* select overwrite drawing mode */
+   setwritemode(COPY_PUT);
+
+   /* draw a line */
+   line(0, 0, xmax, ymax);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,15 +1,17 @@
 ---
 uid: detectgraph
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # detectgraph
  
 #### Determines graphics driver and mode to use by checking the hardware.
 
-<div class="data">
- Declaration:  
-   void far detectgraph(int far *graphdriver, int far *graphmode);
-<br></div>
+<br>
+
+#### Declaration:  
+&nbsp;&nbsp;&nbsp;void far detectgraph(int far \*graphdriver, int far \*graphmode);
+
+<br>
 
 ### Remarks:  
 detectgraph detects your system's graphics adapter and chooses the mode that provides the highest resolution for that adapter.<br><br>
@@ -21,7 +23,7 @@ You can give *graphmode a value using a constant of the [graphics_modes](graphic
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="graphresult.md">  graphresult</a> <a href="initgraph.md">  initgraph  </a>

@@ -1,7 +1,7 @@
 ---
 uid: bar3d
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # bar3d
 
 #### Draws a 3-D bar
@@ -31,7 +31,7 @@ To calculate a typical depth for bar3d, take 25% of the width of the bar, like t
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="bar.md">  bar         </a> <a href="rectangle.md">  rectangle   </a> <a href="setcolor.md">  setcolor    </a> <a href="setfillstyle.md">  setfillstyle</a> <a href="setlinestyle.md">  setlinestyle</a>

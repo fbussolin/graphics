@@ -1,9 +1,16 @@
+---
+uid: pointtype
+---
+[!INCLUDE [](graphics_header.md)]
+###### &nbsp;pointtype&nbsp;
 
-  pointtype                      <GRAPHICS.H>
- ßßßßßßßßßßß
 Coordinates of a point.
 
+<div class="data">
   struct pointtype {
     int  x ;
     int  y ;
   };
+</div>
+
+<br>

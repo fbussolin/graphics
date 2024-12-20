@@ -1,46 +1,46 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýgetgraphmode, setgraphmodeÞ    <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßßßßßßßßßßßßß
-  þ getgraphmode returns the current graphics mode
-  þ setgraphmode sets the system to graphics mode, clears the screen
+---
+uid: getgraphmode
+---
+[!INCLUDE [](graphics_header.md)]
+# getgraphmode, setgraphmode
+* getgraphmode returns the current graphics mode
+* setgraphmode sets the system to graphics mode, clears the screen
 
- Declaration:
-  þ int far getgraphmode(void);
-  þ void far setgraphmode(int mode);
+<br>
 
- Remarks:
-þ getgraphmode returns the current graphics mode.
+#### Declaration:
+* int far getgraphmode(void);
+* void far setgraphmode(int mode);
 
-NOTE: Your program must make a successful call to initgraph or setgraphmode
-BEFORE calling getgraphmode.
+<br>
 
-þ setgraphmode selects a graphics mode different than the default one set by
-initgraph. It clears the screen and resets all graphics settings to their
-defaults.
+### Remarks:
+* getgraphmode returns the current graphics mode.<br><br>
 
-mode must be a valid mode for the current device driver.
+NOTE: Your program must make a successful call to initgraph or setgraphmode BEFORE calling getgraphmode.<br><br>
 
-The enumeration graphics_modes, defined in GRAPHICS.H, gives names for the
-predefined graphics modes.
+* setgraphmode selects a graphics mode different than the default one set by [initgraph](initgraph.md). It clears the screen and resets all graphics settings to their defaults.<br><br>
 
-You can use setgraphmode in conjunction with restorecrtmode to switch back
-and forth between text and graphics modes.
+mode must be a valid mode for the current device driver.<br><br>
+The enumeration [graphics_modes](graphics_modes.md), defined in GRAPHICS.H, gives names for the predefined graphics modes.<br><br>
+You can use setgraphmode in conjunction with [restorecrtmode](restorecrtmode.md) to switch back and forth between text and graphics modes.<br><br>
 
- Return Value:
-  þ getgraphmode returns the graphics mode
-    set by initgraph or setgraphmode
-  þ setgraphmode does not return.
+##### Return Value:
+* getgraphmode returns the graphics mode set by initgraph or setgraphmode
+* setgraphmode does not return.
 
-If you give setgraphmode an invalid mode for the current device driver,
-graphresult returns -10 (grInvalidMode).
+<br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+If you give setgraphmode an invalid mode for the current device driver, graphresult returns -10 (grInvalidMode).<br>
 
- See Also:
-  getmoderange   graphresult
+[!INCLUDE [](portability.md)]
 
- Examples:
-  getgraphmode example   setgraphmode example
+### See Also:
+<div class="data"><a href="getmoderange.md">  getmoderange</a> <a href="graphresult.md">  graphresult </a>
+<br></div>
+
+### Examples:
+<div class="data"><a href="getgraphmode_example.md">  getgraphmode example</a> <a href="setgraphmode_example.md">  setgraphmode example</a>
+</div>
+
+<br>

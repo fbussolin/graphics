@@ -1,66 +1,77 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgetpalettesizeÞ                <GRAPHICS.H>
- ßßßßßßßßßßßßßßßß
- Returns size of palette color lookup table
+---
+uid: getpalettesize
+---
+[!INCLUDE [](graphics_header.md)]
+# getpalettesize
 
- Declaration:  int far getpalettesize(void);
+#### Returns size of palette color lookup table
 
- Remarks:
-getpalettesize is used to determine how many palette entries can be set for
-the current graphics mode. For example, the EGA in color mode returns 16.
+<br>
 
- Return Value:
+#### Declaration:  int far getpalettesize(void);
+
+<br>
+
+### Remarks:
+getpalettesize is used to determine how many palette entries can be set for the current graphics mode. For example, the EGA in color mode returns 16.
+
+<br>
+
+#### Return Value:
 getpalettesize returns the number of palette entries in the current palette.
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  setallpalette   setpalette
+### See Also:
+<div class="data"><a href="setallpalette.md">  setallpalette</a> <a href="setpalette.md">  setpalette   </a>
+<br></div>
 
- Example:
+### Example:
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+<br>
 
- int main()
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int midx, midy;
-    char psize[80];
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+int main()
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int midx, midy;
+   char psize[80];
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    midx = getmaxx() / 2;
-    midy = getmaxy() / 2;
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* convert palette size info. into string */
-    sprintf(psize, "The palette has %d modifiable entries.",
-            getpalettesize());
+   midx = getmaxx() / 2;
+   midy = getmaxy() / 2;
 
-    /* display the information */
-    settextjustify(CENTER_TEXT, CENTER_TEXT);
-    outtextxy(midx, midy, psize);
+   /* convert palette size info. into string */
+   sprintf(psize, "The palette has %d modifiable entries.",
+           getpalettesize());
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* display the information */
+   settextjustify(CENTER_TEXT, CENTER_TEXT);
+   outtextxy(midx, midy, psize);
 
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

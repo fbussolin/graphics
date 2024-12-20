@@ -1,22 +1,29 @@
+---
+uid: text_just
+---
+[!INCLUDE [](graphics_header.md)]
+######  &nbsp;text_just&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  text_just                    <GRAPHICS.H>
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+<br>Enum: Horizontal and vertical justification for [settextjustify](settextjustify.md)<br>
 
- Enum: Horizontal and vertical justification for settextjustify
+<div class="data">
+  Argument│ Constant    │Value│ Meaning
+ ═════════╪═════════════╪═════╪═════════════════════
+  horiz   │ LEFT_TEXT   │  0  │ Left-justify text
+          │ CENTER_TEXT │  1  │ Center text
+          │ RIGHT_TEXT  │  2  │ Right-justify text
+  vert    │ BOTTOM_TEXT │  0  │ Justify from bottom
+          │ CENTER_TEXT │  1  │ Center text
+          │ TOP_TEXT    │  2  │ Justify from top
+<br></div>
 
-  Argument³ Constant    ³Value³ Meaning
- ÍÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
-  horiz   ³ LEFT_TEXT   ³  0  ³ Left-justify text
-          ³ CENTER_TEXT ³  1  ³ Center text
-          ³ RIGHT_TEXT  ³  2  ³ Right-justify text
-  vert    ³ BOTTOM_TEXT ³  0  ³ Justify from bottom
-          ³ CENTER_TEXT ³  1  ³ Center text
-          ³ TOP_TEXT    ³  2  ³ Justify from top
+In calls to settextjustify, if<br>
 
-In calls to settextjustify, if
+<div class="data">
+  ■ horiz     = LEFT_TEXT and
+  ■ direction = HORIZ_DIR
+<br></div>
 
-  þ horiz     = LEFT_TEXT and
-  þ direction = HORIZ_DIR
+the CP's x component is advanced after a call to outtext(string) by textwidth(string).<br><br>
 
-the CP's x component is advanced after a call to outtext(string) by
-textwidth(string).
+<br>

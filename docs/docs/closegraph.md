@@ -1,7 +1,7 @@
 ---
 uid: closegraph
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # closegraph
 
 #### Shuts down the graphics system
@@ -19,7 +19,7 @@ It then restores the screen to the mode it was in before you called [initgraph](
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="initgraph.md">  initgraph      </a> <a href="setgraphbufsize.md">  setgraphbufsize</a>

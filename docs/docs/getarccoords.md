@@ -1,7 +1,7 @@
 ---
 uid: getarccoords
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # getarccoords
 
 #### Gets coordinates of the last call to arc
@@ -16,7 +16,7 @@ getarccoords puts information about the last call to arc in the [arccoordstype s
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="arc.md">  arc        </a> <a href="fillellipse.md">  fillellipse</a> <a href="sector.md">  sector     </a>

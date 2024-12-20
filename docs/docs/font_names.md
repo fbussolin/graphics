@@ -1,7 +1,7 @@
 ---
 uid: font_names
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 ## &nbsp;font_names
 
 ##### Enum: Names for BGI fonts

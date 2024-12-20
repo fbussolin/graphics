@@ -1,70 +1,76 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgetmaxmodeÞ                    <GRAPHICS.H>
- ßßßßßßßßßßßß
- Returns maximum graphics mode number for current driver
+---
+uid: getmaxmode
+---
+[!INCLUDE [](graphics_header.md)]
+# getmaxmode
 
- Declaration:  int far getmaxmode(void);
+#### Returns maximum graphics mode number for current driver
 
- Remarks:
-getmaxmode lets you find out the maximum mode number for the currently
-loaded driver, directly from the driver.
+<br>
 
-This gives it an advantage over getmoderange, which works for Borland
-drivers only.
+#### Declaration:  int far getmaxmode(void);
 
-The minimum mode is 0.
+<br>
 
- Return Value:
+### Remarks:
+getmaxmode lets you find out the maximum mode number for the currently loaded driver, directly from the driver.<br><br>
+This gives it an advantage over getmoderange, which works for Borland drivers only.<br><br>
+The minimum mode is 0.<br><br>
+
+#### Return Value:
 getmaxmode returns the maximum mode number for the current driver.
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+[!INCLUDE [](portability.md)]
 
- See Also:
-  getmodename    getmoderange
+### See Also:
+<div class="data"><a href="getmodename.md">  getmodename </a> <a href="getmoderange.md">  getmoderange</a>
+<br></div>
 
- Example:
+### Example:
 
-  #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+<br>
 
- int main(void)
- {
-        /* request auto detection */
-        int gdriver = DETECT, gmode, errorcode;
-        int midx, midy;
-        char modestr[80];
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-       /* initialize graphics and local variables */
-       initgraph(&gdriver, &gmode, "");
-
-       /* read result of initialization */
-       errorcode = graphresult();
-       if (errorcode != grOk)  /* an error occurred */
+int main(void)
 {
-           printf("Graphics error: %s\n", grapherrormsg(errorcode));
-           printf("Press any key to halt:");
-           getch();
-           exit(1); /* terminate with an error code */
-        }
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int midx, midy;
+   char modestr[80];
 
-        midx = getmaxx() / 2;
-        midy = getmaxy() / 2;
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-        /* grab the mode info. and convert it to a string */
-        sprintf(modestr, "This driver supports modes 0..%d", getmaxmode());
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-       /* display the information */
-       settextjustify(CENTER_TEXT, CENTER_TEXT);
-       outtextxy(midx, midy, modestr);
+   midx = getmaxx() / 2;
+   midy = getmaxy() / 2;
 
-       /* clean up */
-       getch();
-       closegraph();
-      return 0;
- }
+   /* grab the mode info. and convert it to a string */
+   sprintf(modestr, "This driver supports modes 0..%d", getmaxmode());
 
+   /* display the information */
+   settextjustify(CENTER_TEXT, CENTER_TEXT);
+   outtextxy(midx, midy, modestr);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

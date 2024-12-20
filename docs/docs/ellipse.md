@@ -1,7 +1,7 @@
 ---
 uid: ellipse
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # ellipse, fillellipse, sector
 * ellipse draws an elliptical arc
 * fillellipse draws and fills an ellipse
@@ -57,7 +57,7 @@ The linestyle parameter does not affect arcs, circles, ellipses, or pieslices. O
 
 If an error occurs while the elliptical pie slice is filling, [graphresult](graphresult.md) returns -6 (grNoScanMem).
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="arc.md">  arc           </a> <a href="circle.md">  circle        </a> <a href="getaspectratio.md">  getaspectratio</a> <a href="pieslice.md">  pieslice      </a>

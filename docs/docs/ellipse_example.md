@@ -1,3 +1,6 @@
+---
+uid: ellipse_example
+---
 <a class="whitespacepre" href="ellipse.md#example"> ← </a>
 
 ## &nbsp;ellipse example&nbsp;

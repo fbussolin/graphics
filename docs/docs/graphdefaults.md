@@ -1,75 +1,87 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- ÝgraphdefaultsÞ                 <GRAPHICS.H>
- ßßßßßßßßßßßßßßß
- Resets all graphics settings to their defaults
+---
+uid: graphdefaults
+---
+[!INCLUDE [](graphics_header.md)]
+# graphdefaults
 
- Declaration:  void far graphdefaults(void);
+#### Resets all graphics settings to their defaults
 
- Remarks:
+<br>
+
+#### Declaration:  void far graphdefaults(void);
+
+<br>
+
+### Remarks:
 graphdefaults resets all graphics settings to their defaults:
-  þ sets the viewport to the entire screen.
-  þ moves the current position to (0,0).
-  þ sets the default palette colors, background color, and drawing color.
-  þ sets the default fill style and pattern.
-  þ sets the default text font and justification.
+* sets the viewport to the entire screen.
+* moves the current position to (0,0).
+* sets the default palette colors, background color, and drawing color.
+* sets the default fill style and pattern.
+* sets the default text font and justification.
 
- Return Value:  None
+<br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+#### Return Value:  None
 
- See Also:
-  initgraph      setgraphmode
+[!INCLUDE [](portability.md)]
 
- Example:
+### See Also:
+<div class="data"><a href="initgraph.md">  initgraph   </a> <a href="setgraphmode.md">  setgraphmode</a>
+<br></div>
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+### Example:
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int maxx, maxy;
+<br>
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "c:\\bor\\turbo5\\bgi");
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int maxx, maxy;
 
-    maxx = getmaxx();
-    maxy = getmaxy();
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "c:\\bor\\turbo5\\bgi");
 
-    /* output line with non-default settings */
-    setlinestyle(DOTTED_LINE, 0, 3); line(0, 0, maxx, maxy);
-    outtextxy(maxx/2, maxy/3, "Before default values are restored.");
-    getch();
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* restore default values for everything */
-    graphdefaults();
+   maxx = getmaxx();
+   maxy = getmaxy();
 
-    /* clear the screen */
-    cleardevice();
+   /* output line with non-default settings */
+   setlinestyle(DOTTED_LINE, 0, 3); line(0, 0, maxx, maxy);
+   outtextxy(maxx/2, maxy/3, "Before default values are restored.");
+   getch();
 
-    /* output line with default settings */
-    line(0, 0, maxx, maxy);
-    outtextxy(maxx/2, maxy/3, "After restoring default values.");
+   /* restore default values for everything */
+   graphdefaults();
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* clear the screen */
+   cleardevice();
 
+   /* output line with default settings */
+   line(0, 0, maxx, maxy);
+   outtextxy(maxx/2, maxy/3, "After restoring default values.");
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

@@ -1,25 +1,29 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýmoverel, movetoÞ               <GRAPHICS.H>
- ßßßßßßßßßßßßßßßßß
-  þ moverel moves the current position (CP) a relative distance
-  þ moveto moves the CP to (x, y)
+---
+uid: moverel
+---
+[!INCLUDE [](graphics_header.md)]
+# moverel, moveto
+* moverel moves the current position (CP) a relative distance
+* moveto moves the CP to (x, y)
 
- Declaration:
-  þ void far moverel(int dx, int dy);
-  þ void far moveto(int x, int y);
+<br>
 
- Remarks:
-þ moverel moves the current position (CP) dx pixels in the x direction and
-dy pixels in the y direction.
+#### Declaration:
+* void far moverel(int dx, int dy);
+* void far moveto(int x, int y);
 
-þ moveto moves the current position (CP) to viewport position (x, y).
+<br>
 
- Return Value:  None
+### Remarks:
+■ moverel moves the current position (CP) dx pixels in the x direction and dy pixels in the y direction.<br><br>
+■ moveto moves the current position (CP) to viewport position (x, y).<br><br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+#### Return Value:  None
 
- Examples:
-  moverel example   moveto example
+[!INCLUDE [](portability.md)]
+
+### Examples:
+<div class="data"><a href="moverel_example.md">  moverel example</a> <a href="moveto_example.md">  moveto example </a>
+</div>
+
+<br>

@@ -1,7 +1,7 @@
 ---
 uid: getaspectratio
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # getaspectratio,<br>setaspectratio
 * getaspectratio gets the current graphics mode's aspect ratio
 * setaspectratio sets the graphics aspect ratio
@@ -30,7 +30,7 @@ setaspectratio changes the default aspect ratio of the graphics system.<br>
 
 ##### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="arc.md">  arc        </a> <a href="circle.md">  circle     </a> <a href="ellipse.md">  ellipse    </a> <a href="fillellipse.md">  fillellipse</a> <a href="pieslice.md">  pieslice   </a>

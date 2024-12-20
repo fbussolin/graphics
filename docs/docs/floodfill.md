@@ -1,7 +1,7 @@
 ---
 uid: floodfill
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
  # floodfill
  
 #### Flood-fills a bounded region
@@ -26,7 +26,7 @@ floodfill does not work with the IBM-8514 driver.<br><br>
 
 If an error occurs while flooding a region, [graphresult](graphresult.md) returns -7.
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="drawpoly.md">  drawpoly     </a> <a href="fill_patterns.md">  fill_patterns</a> <a href="fillpoly.md">  fillpoly     </a> <a href="graphresult.md">  graphresult </a>

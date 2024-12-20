@@ -1,7 +1,7 @@
 ---
 uid: drawpoly
 ---
-[!INCLUDE [](../includes/graphics_header.md)]
+[!INCLUDE [](graphics_header.md)]
 # drawpoly, fillpoly
 * drawpoly draws the outline of a polygon
 * fillpoly draws and fills a polygon
@@ -9,8 +9,8 @@ uid: drawpoly
 <br>
 
 #### Declaration:
-* void far drawpoly(int numpoints, int far *polypoints);
-* void far fillpoly(int numpoints, int far *polypoints);
+* void far drawpoly(int numpoints, int far \*polypoints);
+* void far fillpoly(int numpoints, int far \*polypoints);
 
 <br>
 
@@ -30,7 +30,7 @@ To draw a closed figure with N vertices, you must pass N+1 coordinates to drawpo
 
 #### Return Value:  None
 
-[!INCLUDE [](../includes/portability.md)]
+[!INCLUDE [](portability.md)]
 
 ### See Also:
 <div class="data"><a href="fill_patterns.md">  fill_patterns</a> <a href="floodfill.md">  floodfill    </a> <a href="graphresult.md">  graphresult  </a> <a href="setfillstyle.md">  setfillstyle </a>

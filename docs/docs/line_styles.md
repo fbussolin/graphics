@@ -1,16 +1,23 @@
+---
+uid: line_styles
+---
+[!INCLUDE [](graphics_header.md)]
+######  &nbsp;line_styles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
- line_styles                    <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+<br>Enum: Line styles for [getlinesettings](getlinesettings.md) and [setlinestyle](setlinestyle.md).<br>
 
-Enum: Line styles for getlinesettings and setlinestyle.
+<div class="data">
+    Name     │Value│ Meaning
+═════════════╪═════╪═════════════════════════
+ SOLID_LINE  │  0  │ Solid line
+ DOTTED_LINE │  1  │ Dotted line
+ CENTER_LINE │  2  │ Centered line
+ DASHED_LINE │  3  │ Dashed line
+ USERBIT_LINE│  4  │ User-defined line style
+<br></div>
 
-    Name     ³Value³ Meaning
-ÍÍÍÍÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
- SOLID_LINE  ³  0  ³ Solid line
- DOTTED_LINE ³  1  ³ Dotted line
- CENTER_LINE ³  2  ³ Centered line
- DASHED_LINE ³  3  ³ Dashed line
- USERBIT_LINE³  4  ³ User-defined line style
+### See Also:
+<div class="data"><a href="line_widths.md">  line_widths</a>
+</div>
 
-See Also:
- line_widths
+<br>

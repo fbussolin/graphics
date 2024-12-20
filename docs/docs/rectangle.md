@@ -1,65 +1,72 @@
- ÜÜÜÜÜÜÜÜÜÜÜ
- ÝrectangleÞ                     <GRAPHICS.H>
- ßßßßßßßßßßß
- Draws a rectangle (graphics mode)
+---
+uid: rectangle
+---
+[!INCLUDE [](graphics_header.md)]
+# rectangle
 
- Declaration:
-  void far rectangle(int left, int top, int right, int bottom);
+#### Draws a rectangle (graphics mode)
 
- Remarks:
-rectangle draws a rectangle in the current line style, thickness, and
-drawing color.
+<br>
 
-(left,top) is the upper left corner of the rectangle, and (right,bottom) is
-its lower right corner.
+#### Declaration:
+&nbsp;&nbsp;void far rectangle(int left, int top, int right, int bottom);
 
- Return Value:  None
+<br>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+### Remarks:
+rectangle draws a rectangle in the current line style, thickness, and drawing color.<br><br>
+(left,top) is the upper left corner of the rectangle, and (right,bottom) is its lower right corner.<br><br>
 
- See Also:
-  bar            bar3d          setcolor       setlinestyle
+#### Return Value:  None
 
- Example:
+[!INCLUDE [](portability.md)]
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+### See Also:
+<div class="data"><a href="bar.md">  bar         </a> <a href="bar3d.md">  bar3d       </a> <a href="setcolor.md">  setcolor    </a> <a href="setlinestyle.md">  setlinestyle</a>
+<br></div>
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
-    int left, top, right, bottom;
+### Example:
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
+<br>
 
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
-    left = getmaxx() / 2 - 50;
-    top = getmaxy() / 2 - 50;
-    right = getmaxx() / 2 + 50;
-    bottom = getmaxy() / 2 + 50;
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
+   int left, top, right, bottom;
 
-    /* draw a rectangle */
-    rectangle(left,top,right,bottom);
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
+   left = getmaxx() / 2 - 50;
+   top = getmaxy() / 2 - 50;
+   right = getmaxx() / 2 + 50;
+   bottom = getmaxy() / 2 + 50;
+
+   /* draw a rectangle */
+   rectangle(left,top,right,bottom);
+
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
+
+<br>

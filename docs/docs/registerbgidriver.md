@@ -1,108 +1,97 @@
- ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
- Ýregisterbgidriver,  Þ          <GRAPHICS.H>
- ÝregisterfarbgidriverÞ
- ßßßßßßßßßßßßßßßßßßßßßß
- Registers linked-in graphics driver
+---
+uid: registerbgidriver
+---
+[!INCLUDE [](graphics_header.md)]
+# registerbgidriver,<br>registerfarbgidriver
 
- Declaration:
-  þ int registerbgidriver(void (*driver)(void));
-  þ int far registerfarbgidriver(void far *driver);
+#### Registers linked-in graphics driver
 
- Remarks:
-þ registerbgidriver enables a user to load a driver file and "register" the
-driver.
+<br>
 
-þ registerfarbgidriver is used to register far drivers.
+#### Declaration:
+* int registerbgidriver(void (\*driver)(void));
+* int far registerfarbgidriver(void far \*driver);
 
-Once the driver's memory location has been passed to registerbgidriver,
-initgraph uses the registered driver.
+<br>
 
-A user-registered driver can be loaded from disk onto the heap, or converted
-to an .OBJ file (using BINOBJ.EXE) and linked into the .EXE.
+### Remarks:
+■ registerbgidriver enables a user to load a driver file and "register" the driver.<br><br>
+■ registerfarbgidriver is used to register far drivers.<br><br>
+Once the driver's memory location has been passed to registerbgidriver, initgraph uses the registered driver.<br><br>
+A user-registered driver can be loaded from disk onto the heap, or converted to an .OBJ file (using BINOBJ.EXE) and linked into the .EXE.<br><br>
+Calling registerbgidriver informs the BGI graphics system that the driver \*driver was included at link time.<br><br>
+registerbgidriver checks the linked-in code for the specified driver. If the code is valid, it registers the code in internal tables.<br><br>
+Linked-in drivers are discussed in detail in UTIL.DOC.<br><br>
+By using the name of a linked-in driver in a call to registerbgidriver, you also tell the compiler (and linker) to link in the object file with that public name.<br><br>
 
-Calling registerbgidriver informs the BGI graphics system that the driver
-*driver was included at link time.
+###### Far drivers
+Far drivers are created with the /F switch of the BGIOBJ utility. This switch is described in UTIL.DOC (an online text file included with your distribution disks).<br><br><br>
 
-registerbgidriver checks the linked-in code for the specified driver. If the
-code is valid, it registers the code in internal tables.
+#### Return Value
+* On success, returns a negative graphics  
+error code if the specified driver or  
+font is invalid.
+* Otherwise, returns the driver number.
 
-Linked-in drivers are discussed in detail in UTIL.DOC.
+<br>If you register a user-supplied driver, you MUST pass the result of registerbgidriver to initgraph as the drive number to be used.
 
-By using the name of a linked-in driver in a call to registerbgidriver, you
-also tell the compiler (and linker) to link in the object file with that
-public name.
+[!INCLUDE [](portability.md)]
 
- Far drivers
- ßßßßßßßßßßß
-Far drivers are created with the /F switch of the BGIOBJ utility. This
-switch is described in UTIL.DOC (an online text file included with your
-distribution disks).
+### See Also:
+<div class="data"><a href="graphresult.md">  graphresult      </a> <a href="initgraph.md">  initgraph        </a> <a href="installuserdriver.md">  installuserdriver</a>
+<a href="registerbgifont.md">  registerbgifont  </a>
+<br></div>
 
+### Example (registerbgidriver only):
 
- Return Value
-  þ On success, returns a negative graphics
-    error code if the specified driver or
-    font is invalid.
-  þ Otherwise, returns the driver number.
+<br>
 
-If you register a user-supplied driver, you MUST pass the result of
-registerbgidriver to initgraph as the drive number to be used.
+```
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
 
- Portability:
- É DOS Ñ UNIX Ñ Windows Ñ ANSI C Ñ C++ Only »
- º Yes ³      ³         ³        ³          º
- ÈÍÍÍÍÍÏÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÍÍ¼
+int main(void)
+{
+   /* request auto detection */
+   int gdriver = DETECT, gmode, errorcode;
 
- See Also:
-  graphresult         initgraph           installuserdriver
-  registerbgifont
+   /* register a driver that was added into graphics.lib */
+   /* For information on adding the driver, see the
+   /* BGIOBJ section of UTIL.DOC */
+   errorcode = registerbgidriver(EGAVGA_driver);
 
- Example (registerbgidriver only):
+   /* report any registration errors */
+   if (errorcode < 0)
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
- #include <graphics.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <conio.h>
+   /* initialize graphics and local variables */
+   initgraph(&gdriver, &gmode, "");
 
- int main(void)
- {
-    /* request auto detection */
-    int gdriver = DETECT, gmode, errorcode;
+   /* read result of initialization */
+   errorcode = graphresult();
+   if (errorcode != grOk)  /* an error occurred */
+   {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1); /* terminate with an error code */
+   }
 
-    /* register a driver that was added into graphics.lib */
-    /* For information on adding the driver, see the
-    /* BGIOBJ section of UTIL.DOC */
-    errorcode = registerbgidriver(EGAVGA_driver);
+   /* draw a line */
+   line(0, 0, getmaxx(), getmaxy());
 
-    /* report any registration errors */
-    if (errorcode < 0)
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
+   /* clean up */
+   getch();
+   closegraph();
+   return 0;
+}
+```
 
-    /* initialize graphics and local variables */
-    initgraph(&gdriver, &gmode, "");
-
-    /* read result of initialization */
-    errorcode = graphresult();
-    if (errorcode != grOk)  /* an error occurred */
-    {
-       printf("Graphics error: %s\n", grapherrormsg(errorcode));
-       printf("Press any key to halt:");
-       getch();
-       exit(1); /* terminate with an error code */
-    }
-
-    /* draw a line */
-    line(0, 0, getmaxx(), getmaxy());
-
-    /* clean up */
-    getch();
-    closegraph();
-    return 0;
- }
-
-
+<br>

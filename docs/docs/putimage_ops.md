@@ -1,13 +1,21 @@
+---
+uid: putimage_ops
+---
+[!INCLUDE [](graphics_header.md)]
+###### &nbsp;putimage_ops&nbsp;
 
- putimage_ops                    <GRAPHICS.H>
-ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+&nbsp;<br>
 
-Enum: Operators for putimage
+##### Enum: Operators for [putimage](putimage.md)
 
- Constant³Value³ Meaning
-ÍÍÍÍÍÍÍÍÍØÍÍÍÍÍØÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
- COPY_PUT³  0  ³ Copies source bitmap onto screen
- XOR_PUT ³  1  ³ Exclusive ORs source image with that already onscreen
- OR_PUT  ³  2  ³ Inclusive ORs image with that already onscreen
- AND_PUT ³  3  ³ ANDs image with that already onscreen
- NOT_PUT ³  4  ³ Copy the inverse of the source
+<div class="data">
+ Constant│Value│ Meaning
+═════════╪═════╪═══════════════════════════════════════════════════════
+ COPY_PUT│  0  │ Copies source bitmap onto screen
+ XOR_PUT │  1  │ Exclusive ORs source image with that already onscreen
+ OR_PUT  │  2  │ Inclusive ORs image with that already onscreen
+ AND_PUT │  3  │ ANDs image with that already onscreen
+ NOT_PUT │  4  │ Copy the inverse of the source
+</div>
+
+<br>
